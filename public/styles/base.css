@@ -1,0 +1,16 @@
+.dropbutton {
+  color: white;
+  background-color: aqua;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.dropbutton:hover {
+  background-color: brown
+}
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
