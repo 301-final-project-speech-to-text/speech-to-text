@@ -19,9 +19,13 @@
   },
   "homepage": "https://github.com/301-final-project-speech-to-text/speech-to-text#readme",
   "dependencies": {
+    "@google-cloud/speech": "^3.2.3",
+    "@google-cloud/translate": "^4.1.2",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.2",
+    "eslint": "^6.1.0",
     "express": "^4.17.1",
+    "node-record-lpcm16": "^1.0.1",
     "pg": "^7.12.0",
     "superagent": "^5.1.0"
   }

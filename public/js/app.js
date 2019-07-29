@@ -8,19 +8,28 @@ recognition.onstart = function() {
 }
 
 recognition.onresult = function(event) { 
+  console.log('got in');
   const index = event.resultIndex;
-  const text = event.results[index][0].transcript;
-  talk(text);
-  $('.words').text(text);
-}
+  const transcript = event.results[index][0].transcript;
+  console.log(event);
+  // $.ajax({
+  //   type: 'POST',
+  //   url: '/translate',
+  //   data: {transcript: transcript},
+  //   success: function(data) { 
+  //     talk(data);
+  //     $('.words').transcript(data);
+  //   }
+  // });
+};
 
 $('.talk').click(() => {
   recognition.start();
-})
+});
 
 function talk(transcript) { 
   const speech = new SpeechSynthesisUtterance();
-  speech.text = transcript;
+  speech.transcript = transcript;
   speech.volume = 1;
   speech.rate = 1; 
   speech.pitch = 1;
