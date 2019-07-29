@@ -19,7 +19,7 @@ app.listen(PORT, () => {
 })
 
 app.get('/', getHomePage);
-app.post('/translate', translateHandler);
+app.get('/translate', translateHandler);
 
 function getHomePage(req, res) { 
   try {
@@ -83,8 +83,7 @@ const translate = new Translate();
 
 
 function translateHandler(req, res) { 
-  console.log(req.data);
-  const transcript = req.data.transcript;
+  const transcript = req.query.data;
   const language = 'es';
   console.log(transcript);
   translateText(transcript, language)

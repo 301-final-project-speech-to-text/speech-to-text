@@ -11,16 +11,16 @@ recognition.onresult = function(event) {
   console.log('got in');
   const index = event.resultIndex;
   const transcript = event.results[index][0].transcript;
-  console.log(event);
-  // $.ajax({
-  //   type: 'POST',
-  //   url: '/translate',
-  //   data: {transcript: transcript},
-  //   success: function(data) { 
-  //     talk(data);
-  //     $('.words').transcript(data);
-  //   }
-  // });
+  $.ajax({
+    method: 'GET',
+    url: '/translate',
+    data: {data: transcript},
+    cache: false,
+    success: function(data) { 
+      talk(data);
+      $('.words').text(data);
+    }
+  });
 };
 
 $('.talk').click(() => {
