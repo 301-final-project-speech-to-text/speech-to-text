@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Speech To Text</title>
-</head>
+<%- include('head.ejs') %>
 <body>
-  <button class="talk">Talk</button>
-  <h3 class="words"></h3>
+    <%- include('header.ejs') %>
+  <section id="firstLanguageWindow">
+    <select name="firstLanguages" id="firstLanguages">
+      <option value="English">English</option>
+      <option value="French">French</option>
+      <option value="German">German</option>
+      <option value="Italian">Italian</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Korean">Korean</option>
+      <option value="Russian">Russian</option>
+      <option value="Spanish">Spanish</option>
+      <option value="Thai">Thai</option>
+      <option value="Vietnames">Vietnamese</option>
+    </select>
+      <button class="firstTalk">Talk</button>
+      <h3 class="firstWords"></h3>
+  </section>
 
+  <section id="secondLanguageWindow">
+    <select name="secondLanguages" id="secondLanguages">
+      <option value="English">English</option>
+      <option value="French">French</option>
+      <option value="German">German</option>
+      <option value="Italian">Italian</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Korean">Korean</option>
+      <option value="Russian">Russian</option>
+      <option value="Spanish">Spanish</option>
+      <option value="Thai">Thai</option>
+      <option value="Vietnames">Vietnamese</option>
+    </select>
+      <button class="secondTalk">Talk</button>
+      <h3 class="secondWords"></h3>
+  </section>
+  
+  <%- include('footer.ejs') %>
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

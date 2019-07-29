@@ -19,12 +19,12 @@ recognition.onresult = function(event) {
     cache: false,
     success: function(data) { 
       talk(data);
-      $('.words').text(data);
+      $('.firstWords').text(data);
     }
   });
 };
 
-$('.talk').click(() => {
+$('.firstTalk').click(() => {
   recognition.start();
 });
 
