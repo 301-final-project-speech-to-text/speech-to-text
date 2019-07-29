@@ -83,9 +83,11 @@ const translate = new Translate();
 
 
 function translateHandler(req, res) { 
-  const transcript = req.query.data;
-  const language = 'en';
-  console.log(transcript);
+  const transcript = req.query.transcript;
+  const language = req.query.language;
+  console.log('transcript: ', transcript);
+  console.log('language :', language);
+  console.log(req.query);
   translateText(transcript, language)
     .then(translation => res.send(translation));
 }
@@ -102,5 +104,4 @@ async function translateText(text, target) {
   } catch (error) {
     console.error(error);
   }
-  
 }
