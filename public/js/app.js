@@ -22,6 +22,8 @@ const languagesCode = {
 let firstSelectedLanguageCode = '';
 let secondSelectedLanguageCode = '';
 
+populateLanguageDropDownMenu();
+
 recognition.onstart = function() { 
   console.log('first language voice is recording');
 };
@@ -92,6 +94,19 @@ function getLanguages() {
   secondSelectedLanguageCode = languagesCode[secondSelectedLanguage];
 }
 
+function populateLanguageDropDownMenu() { 
+  $.ajax({
+    method: 'GET',
+    url: '/languages',
+    success: function(data) { 
+      data.forEach(language => { 
+        $('#firstLanguages').append(`<option>${language.name}</option>`);
+        $('#secondLanguages').append(`<option>${language.name}</option>`);
+      })
+    }
+  })
+  
+}
 
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");

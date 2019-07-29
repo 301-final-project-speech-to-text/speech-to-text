@@ -5,9 +5,9 @@ const app = express();
 const superagent = require('superagent');
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
-// const pg = require('pg');
-// const client = new pg.Client(process.env.DATABASE_URL);
-// client.connect();
+const pg = require('pg');
+const client = new pg.Client(process.env.DATABASE_URL);
+client.connect();
 
 
 app.set('view engine', 'ejs');
@@ -20,6 +20,7 @@ app.listen(PORT, () => {
 
 app.get('/', getHomePage);
 app.get('/translate', translateHandler);
+app.get('/languages', getLanguagesHandler);
 
 function getHomePage(req, res) { 
   try {
@@ -104,4 +105,13 @@ async function translateText(text, target) {
   } catch (error) {
     console.error(error);
   }
+}
+
+async function getLanguagesHandler(req, res) { 
+  const SQL = 'SELECT name FROM lang;';
+
+  const result = await client.query(SQL);
+  const languages = result.rows;
+  console.log(languages);
+  res.send(languages);
 }
