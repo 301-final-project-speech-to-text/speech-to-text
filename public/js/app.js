@@ -2,6 +2,7 @@
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
+recognition.lang = 'vi-US';
 
 recognition.onstart = function() { 
   console.log('voice is recording');

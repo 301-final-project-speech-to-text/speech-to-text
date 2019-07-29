@@ -84,7 +84,7 @@ const translate = new Translate();
 
 function translateHandler(req, res) { 
   const transcript = req.query.data;
-  const language = 'es';
+  const language = 'en';
   console.log(transcript);
   translateText(transcript, language)
     .then(translation => res.send(translation));
@@ -92,7 +92,7 @@ function translateHandler(req, res) {
 
 async function translateText(text, target) { 
   try {
-    let [translations] = await translate.translate(text, 'vi');
+    let [translations] = await translate.translate(text, target);
     translations = Array.isArray(translations) ? translations : [translations];
     console.log('Translations:');
     translations.forEach((translation, i) => {
