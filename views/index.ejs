@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Speech To Text</title>
-</head>
+<%- include('head.ejs') %>
 <body>
+    <%- include('header.ejs') %>
   <section id="firstLanguageWindow">
     <select name="firstLanguages" id="firstLanguages">
       <option value="English">English</option>
@@ -41,6 +37,7 @@
       <h3 class="secondWords"></h3>
   </section>
   
+  <%- include('footer.ejs') %>
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
