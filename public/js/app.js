@@ -2,7 +2,9 @@
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
+recognition.interimResults = true;
 const recognition2 = new SpeechRecognition();
+recognition2.interimResults = true;
 const languagesCode = { 
   Chinese: 'zh',
   English: 'en',
@@ -87,7 +89,5 @@ function getLanguages() {
   let firstSelectedLanguage = $('#firstLanguages option:selected').text();
   firstSelectedLanguageCode = languagesCode[firstSelectedLanguage];
   let secondSelectedLanguage = $('#secondLanguages option:selected').text();
-  console.log('second language: ', secondSelectedLanguage);
   secondSelectedLanguageCode = languagesCode[secondSelectedLanguage];
-  console.log('second language code: ', secondSelectedLanguageCode);
 }
