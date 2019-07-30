@@ -126,3 +126,20 @@ nav > ul > li > a{
   text-decoration: none;
   color:white;
 }
+
+
+ /* //////////////////////////////////////// Footer ////////////////////////////////////////////////// */
+
+ footer { 
+   background: #644749;
+ }
+
+ #firstLanguageWindow { 
+   background: #E3BB88;
+ }
+
+ #secondLanguageWindow { 
+   background: #DB9864;
+ }
+
+ 

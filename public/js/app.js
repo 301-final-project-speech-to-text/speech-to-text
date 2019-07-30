@@ -6,6 +6,7 @@ const recognition = new SpeechRecognition();
 const recognition2 = new SpeechRecognition();
 // recognition2.interimResults = true;
 
+
 const languagesCode = {
   Chinese: 'zh',
   English: 'en',
