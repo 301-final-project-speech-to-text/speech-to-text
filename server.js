@@ -118,15 +118,12 @@ async function getLanguagesHandler(req, res) {
 
 async function saveToDatabase(req, res) { 
   const SQL = `
-    INSERT INTO trans (string, translation, lang_name_id, lang_trans_name_id ) 
-    VALUES ($1, $2, (select lang_name_id
-    from trans join lang l1 on lang_name_id = l1.id
-    join lang l2 on lang_trans_name_id = l2.id
-    where l1.name = $3
-    ), (select lang_name_id
-    from trans join lang l1 on lang_name_id = l1.id
-    join lang l2 on lang_trans_name_id = l2.id
-    where l1.name = $4));`;
+  INSERT INTO trans (string, translation, lang_name_id, lang_trans_name_id, user_id ) 
+  VALUES ($1, $2, (select id
+  from lang where name = $3
+  ), (select id
+  from lang where name = $4), 
+  (select id from users where users.name='Nadya'));`;
 
   console.log(req.body);
   const values = [req.body.originalTranscript, req.body.translatedTranscript, req.body.originalLanguage, req.body.translatedLanguage];
