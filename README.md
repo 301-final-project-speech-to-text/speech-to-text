@@ -1,6 +1,12 @@
 # Code 301 Final Project: Goya
 Final Project Repo
 
+## Team Members 
+Nadya Ilinskaya
+Quang Nguyen
+Sam Gnuschke
+Sarah Fisher 
+
 ## Version
 1.0.0 
 
@@ -23,9 +29,9 @@ Our concept is to break through the language barriers for travelers and those li
 "As a developer, I want the application to be mobile first yet capable of being used from a computer that has a microphone."
 "As a developer, I want to save the user information so that individuals can have their own saved translations."
 "As a user, I want to be able to access the 'How to use' information in multiple languages."
+"As a user, I want to see my username displayed in the app pages while I am logged in"
 "As a developer, I want useful and descriptive error functions throughout the code actions to assist with debugging and communicating with the user."
 "As a developer, I want to convey my story and that of my team to the user."
-"As a user, I want to see my username displayed in the app pages while I am logged in"
 
 #### Wireframes
 ![alt text](/assets/Wireframe-Draft)
@@ -119,23 +125,24 @@ https://goya-translation.herokuapp.com/
 ### Give examples of use
 
 ### Instructions to run the app on your computer
-- npm init -y
-- npm install
+- npm install in terminal
+- open PSQL, run command: CREATE DATABASE goya
+- add schema to your database, run command: psql -d goya -f ./data/schema.sql
 - Google Cloud API key: Follow the instructions in the following link to create your API key
   - https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-install-nodejs
-- Add .env file to your local copy of the app code
-  - Include your local host port, the GOOGLE_APPLICATION_CREDENTIALS, and DATABASE_URL
+- add .env file to your local copy of the app code
+  - include your localhost port: PORT = 3000
+  - the google API: GOOGLE_APPLICATION_CREDENTIALS = /pathfromtheplaceyoustoredyourGoogleAPIJSONfile
+  - the database: DATABASE_URL = postgres://user:password@localhost:5432/goya
+- run node server.js
+- open web browser and go to localhost:3000 to view the homepage
 
 
 ## Contribute
 No contribution guidelines at this point. 
 
 ## Credits
-Nadya Ilinskaya
-Quang Nguyen
-Sam Gnuschke
-Sarah Fisher 
-
+* Jacob K
 * https://meyerweb.com/eric/tools/css/reset/ CSS Reset Tool
 * https://nodejs.org/en/
 
