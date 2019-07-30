@@ -18,10 +18,14 @@ Our concept is to break through the language barriers for travelers and those li
 #### User Stories
 "As a traveler, I want to be able to translate what I am saying so that another person can see what I said translated into their language."
 "As a user, I want to be able to save past translations so that I can see them later."
-"As a user, I want to be able to play back past translations so I can 'speak' to others in their language"
+"As a user, I want to be able to play back past translations so I can 'speak' to others in their language."
+"As a developer, I want the user to have a comfortable experience with the application."
+"As a developer, I want the application to be mobile first yet capable of being used from a computer that has a microphone."
+"As a developer, I want to save the user information so that individuals can have their own saved translations."
+"As a user, I want to be able to access the 'How to use' information in multiple languages."
 
 #### Wireframes
------------------ Each page or view of your application should have its own wireframe and some pages may have multiple wireframes to illustrate changes based on user interaction.
+![alt text](/assets/Wireframe-Draft)
 
 #### Code of Conduct and Conflict Plan
 - We will strive to create an open and welcoming environment where participation and contribution to the project and general community is a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
@@ -50,21 +54,24 @@ Our concept is to break through the language barriers for travelers and those li
 ├── package-lock.json
 ├── package.json
 ├── public
+|   ├── assets
+|   ├── styles
+|   |   ├── base.css
+|   |   ├── layout.css
+|   |   └── reset.css
+|   └── js
+|       └── app.js
+├── data
+|   └── schema.sql
 ├── server.js
 └── views
     ├── index.ejs
-    ├── pages
-    │   ├── books
-    │   │   ├── new.ejs
-    │   │   └── show.ejs
-    │   ├── error.ejs
-    │   └── searches
-    │       ├── new.ejs
-    │       └── show.ejs
-    └── partials
-        ├── footer.ejs
-        ├── head.ejs
-        └── header.ejs
+    ├── about-us.ejs
+    ├── footer.ejs
+    ├── head.ejs
+    ├── how-to.ejs
+    ├── savedPhrases.ejs
+    └── header.ejs
 
 #### Daily Team Workflow
 Day 1: Brainstorm project scope, build organization and repo on Github, declare MVP, designate stretch goals, create basic wireframes, start writing user stories based on MVP, build repo branch structure, deploy on Heroku and complete proof of life check, decide on app name, built About Me page with content, draft ReadMe, start code in app.js, base.css, modules.css, and templates (ejs), created Trello team and board, build database structure, write and agree on code of conduct, conflict and communication plans.
