@@ -1,6 +1,8 @@
+
+/* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 .dropbutton {
   color: white;
-  background-color: aqua;
+  background-color: rgb(0, 110, 255);
   font-size: 14px;
   cursor: pointer;
   padding: 10px;
@@ -13,4 +15,114 @@
 .dropdownContainer {
   position: relative;
   display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content {
+  color: black;
+  padding: 10px 14px;
+  display: block;
+}
+.dropdown-content a:hover
+
+* {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.team-section {
+  overflow: hidden;
+  text-align: center
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////////ABOUT ME CSS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.team-section {
+  overflow: hidden;
+  text-align: center;
+  padding: 60px;
+
+}
+
+.team-section h1 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 30px;
+}
+
+.border{
+  display: block;
+  margin: auto;
+  width: 160px;
+  height: 4px;
+  background: midnightblue;
+}
+
+.ps{
+  margin-bottom: 40px;
+}
+
+.ps a{
+  display: inline-block;
+  margin: 0 15px;
+  width: 35%;
+  height: 35%;
+  overflow: hidden;
+  border-radius: 30%;
+}
+
+.ps a img{
+  width: 100px;
+  height: 100px;
+  filter: grayscale(100%);
+  transition: 0.4s all;  
+}
+
+.ps a:hover > img {
+  filter: none;
+}
+
+.section{
+  width: 300px;
+  margin: auto;
+  font-size: 20px;
+  color: white;
+  text-align: justify;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.section:target{
+  height: auto;
+}
+
+.name{
+  display: block;
+  margin-bottom: 10px;
+  /* margin-top: 10px; */
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 44px;
+}
+
+li{
+  font-size: 18px;
+  color: white;
+  margin: 20px;
+}
+
+nav > ul > li > a{
+  text-decoration: none;
+  color:white;
 }
