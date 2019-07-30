@@ -128,18 +128,60 @@ nav > ul > li > a{
 }
 
 
- /* //////////////////////////////////////// Footer ////////////////////////////////////////////////// */
+ /* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
 
  footer { 
    background: #644749;
+   flex-grow: 1;
  }
 
  #firstLanguageWindow { 
+   display: flex;
    background: #E3BB88;
+   flex-grow: 4;
+   padding: 10px;
+   flex-direction: column;
  }
 
  #secondLanguageWindow { 
+   display: flex;
    background: #DB9864;
+   flex-grow: 4;
+   padding: 10px;
+   flex-direction: column;
  }
 
- 
+ .windowHeader { 
+   display: flex;
+   justify-content: space-between;
+ }
+
+ nav { 
+   background: rgb(148, 177, 155);
+   display: flex;
+   flex-grow: 1;
+ }
+
+ #saveWindow { 
+   display: flex;
+   background: #B1695A;
+   flex-grow: 0.5;
+   justify-content: center;
+ }
+
+ body { 
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   width: 100vw;
+ }
+
+ .firstWords, .secondWords { 
+   background: #eee;
+   height: 80%;
+   width: 90%;
+   margin-top: 20px;
+   margin: auto;
+   border-radius: 10px;
+   box-shadow: 0 7px 4px #644749;
+ }
