@@ -19,8 +19,11 @@ app.listen(PORT, () => {
 })
 
 app.get('/', getHomePage);
+app.get('/saved', getSavedPhrases);
+app.delete('/saved/:id', deleteSavedPhrases);
 app.get('/translate', translateHandler);
 app.get('/languages', getLanguagesHandler);
+app.post('/transcript', saveToDatabase);
 
 function getHomePage(req, res) { 
   try {
@@ -112,6 +115,39 @@ async function getLanguagesHandler(req, res) {
 
   const result = await client.query(SQL);
   const languages = result.rows;
-  console.log(languages);
   res.send(languages);
+}
+
+async function saveToDatabase(req, res) { 
+  const SQL = `
+  INSERT INTO trans (string, translation, lang_name_id, lang_trans_name_id, user_id) 
+  VALUES ($1, $2, (select id
+  from lang where name = $3
+  ), (select id
+  from lang where name = $4), 
+  (select id from users where users.name='Nadya'));`;
+
+  console.log(req.body);
+  const values = [req.body.originalTranscript, req.body.translatedTranscript, req.body.originalLanguage, req.body.translatedLanguage];
+  client.query(SQL, values);
+}
+
+async function getSavedPhrases(req, res) { 
+  const SQL = `
+  SELECT trans.id, string, translation, l1.code AS original, l2.code AS translated FROM trans 
+  JOIN lang l1 ON lang_name_id = l1.id
+  JOIN lang l2 ON lang_trans_name_id = l2.id
+  JOIN users ON trans.user_id = users.id 
+  WHERE users.name = 'Nadya';`;
+
+  const result = await client.query(SQL);
+  const savedPhrases = result.rows;
+  res.render('savedPhrases', {savedPhrases: savedPhrases});
+}
+
+function deleteSavedPhrases(req, res) {
+  const SQL = 'DELETE FROM trans WHERE id=$1;';
+  const value = [req.params.id];
+  console.log(req.params);
+  client.query(SQL, value);
 }
