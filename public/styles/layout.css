@@ -1,0 +1,14 @@
+#savedPhrasesTable { 
+  display: flex;
+  flex-direction: row;
+}
+
+#originalPhrase { 
+  display: flex;
+  flex-direction: column;
+}
+
+#translatedPhrase { 
+  display: flex;
+  flex-direction: column;
+}
