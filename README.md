@@ -18,10 +18,17 @@ Our concept is to break through the language barriers for travelers and those li
 #### User Stories
 "As a traveler, I want to be able to translate what I am saying so that another person can see what I said translated into their language."
 "As a user, I want to be able to save past translations so that I can see them later."
-"As a user, I want to be able to play back past translations so I can 'speak' to others in their language"
+"As a user, I want to be able to play back past translations so I can 'speak' to others in their language."
+"As a developer, I want the user to have a comfortable experience with the application."
+"As a developer, I want the application to be mobile first yet capable of being used from a computer that has a microphone."
+"As a developer, I want to save the user information so that individuals can have their own saved translations."
+"As a user, I want to be able to access the 'How to use' information in multiple languages."
+"As a developer, I want useful and descriptive error functions throughout the code actions to assist with debugging and communicating with the user."
+"As a developer, I want to convey my story and that of my team to the user."
+"As a user, I want to see my username displayed in the app pages while I am logged in"
 
 #### Wireframes
------------------ Each page or view of your application should have its own wireframe and some pages may have multiple wireframes to illustrate changes based on user interaction.
+![alt text](/assets/Wireframe-Draft)
 
 #### Code of Conduct and Conflict Plan
 - We will strive to create an open and welcoming environment where participation and contribution to the project and general community is a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
@@ -38,33 +45,48 @@ Our concept is to break through the language barriers for travelers and those li
 - We will listen to hear, not to reply, to ensure everyone's voice is heard. We will also make sure each team member agrees to the decisions made in the project before they are acted upon.
 - We will create a safe environment where everyone feels comfortable speaking up by following our code of conduct and keeping each other accountable.
 
-#### Project Scope
- ----------------- MVP
- ----------------- Stretch
+### Project Scope
+#### MVP
+- Main app page has two translation interfaces where the user can select languages to translate between. The user can speak to the app in one language and have the transcipt display in the selected second language. There will be a second page displaying past translations and a third page that shares information about the team.
+#### Stretch
+- Create unique usernames and allow each user to have custom data assigned to their username
+- Have a custom menu to move smoothly between the multiple pages
+- Have a custom, animated recording icon so the user more easily can see when the app is listening
+- Give the user the option to save translations to their account
+- Display the saved translations on a page based on the users database
+- Give the user the ability to delete saved translations
+- Give the user the ability to modify saved translation strings
+- Have the username display on each page when the user is logged in to the app
+- Build user authentification
+- Display a custom message on the Saved Translations page when there are none saved yet to remind the user they are able to save
+- Display a custom message on the Saved Translations page when the code is not able to find a user's saved translations
+- Build a How to use the app page to support new users learning the app's functionality
+- Give the user language options on the How to use the app page to translate the instructions
 
 ### Project Organization
- - Kanban board on Trello
-
------------------Update tree once app is built
+ - Kanban board on Trello: https://trello.com/b/5HxdkU7g/goya-app
 
 ├── package-lock.json
 ├── package.json
 ├── public
+|   ├── assets
+|   ├── styles
+|   |   ├── base.css
+|   |   ├── layout.css
+|   |   └── reset.css
+|   └── js
+|       └── app.js
+├── data
+|   └── schema.sql
 ├── server.js
 └── views
     ├── index.ejs
-    ├── pages
-    │   ├── books
-    │   │   ├── new.ejs
-    │   │   └── show.ejs
-    │   ├── error.ejs
-    │   └── searches
-    │       ├── new.ejs
-    │       └── show.ejs
-    └── partials
-        ├── footer.ejs
-        ├── head.ejs
-        └── header.ejs
+    ├── about-us.ejs
+    ├── footer.ejs
+    ├── head.ejs
+    ├── how-to.ejs
+    ├── savedPhrases.ejs
+    └── header.ejs
 
 #### Daily Team Workflow
 Day 1: Brainstorm project scope, build organization and repo on Github, declare MVP, designate stretch goals, create basic wireframes, start writing user stories based on MVP, build repo branch structure, deploy on Heroku and complete proof of life check, decide on app name, built About Me page with content, draft ReadMe, start code in app.js, base.css, modules.css, and templates (ejs), created Trello team and board, build database structure, write and agree on code of conduct, conflict and communication plans.
@@ -94,9 +116,16 @@ No tests at this time.
 https://goya-translation.herokuapp.com/
 
 ## How to use?
-(give examples of use)
-- Instructions that the user may need to follow in order to get your application up and running on their own computer
-- A list of any libraries, frameworks, or packages that your application requires in order to properly function
+### Give examples of use
+
+### Instructions to run the app on your computer
+- npm init -y
+- npm install
+- Google Cloud API key: Follow the instructions in the following link to create your API key
+  - https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-install-nodejs
+- Add .env file to your local copy of the app code
+  - Include your local host port, the GOOGLE_APPLICATION_CREDENTIALS, and DATABASE_URL
+
 
 ## Contribute
 No contribution guidelines at this point. 
@@ -109,7 +138,6 @@ Sarah Fisher
 
 * https://meyerweb.com/eric/tools/css/reset/ CSS Reset Tool
 * https://nodejs.org/en/
-* 
 
 ## License
 MIT © Code Fellows
