@@ -147,7 +147,7 @@ function populateLanguageDropDownMenu() {
   });
 }
 
-function myFunction() {
+function showDropdown() {
   document.getElementById('myDropdown').classList.toggle('show');
 }
 
@@ -163,5 +163,5 @@ window.onclick = function(event) {
       }
     }
   }
-};
+}
 
