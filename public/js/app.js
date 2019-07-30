@@ -2,7 +2,9 @@
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
+// recognition.interimResults = true;
 const recognition2 = new SpeechRecognition();
+// recognition2.interimResults = true;
 const languagesCode = { 
   Chinese: 'zh',
   English: 'en',
@@ -20,6 +22,13 @@ const languagesCode = {
 let firstSelectedLanguageCode = '';
 let secondSelectedLanguageCode = '';
 
+let savedTranscript = {
+  originalTranscript: '',
+  translatedTranscript: '',
+  originalLanguage: '',
+  translatedLanguage: ''
+};
+
 populateLanguageDropDownMenu();
 
 recognition.onstart = function() { 
@@ -33,13 +42,15 @@ recognition2.onstart = function() {
 recognition.onresult = function(event) { 
   const index = event.resultIndex;
   const transcript = event.results[index][0].transcript;
+  savedTranscript.originalTranscript = transcript;
   $.ajax({
     method: 'GET',
     url: '/translate',
     data: {transcript: transcript, language: secondSelectedLanguageCode},
     cache: false,
     success: function(data) { 
-      talk(data);
+      savedTranscript.translatedTranscript = data[0];
+      talk(data[0]);
       $('.firstWords').text(transcript);
       $('.secondWords').text(data);
     }
@@ -49,15 +60,15 @@ recognition.onresult = function(event) {
 recognition2.onresult = function(event) { 
   const index = event.resultIndex;
   const transcript = event.results[index][0].transcript;
-  getLanguages();
-  recognition.lang = secondSelectedLanguageCode;
+  savedTranscript.originalTranscript = transcript;
   $.ajax({
     method: 'GET',
     url: '/translate',
     data: {transcript: transcript, language: firstSelectedLanguageCode},
     cache: false,
     success: function(data) { 
-      talk(data);
+      savedTranscript.translatedTranscript = data[0];
+      talk(data[0]);
       $('.firstWords').text(data);
       $('.secondWords').text(transcript);
     }
@@ -65,15 +76,36 @@ recognition2.onresult = function(event) {
 };
 
 $('.firstTalk').click(() => {
-  getLanguages();
+  const selectedLanguages = getLanguages();
+  savedTranscript.originalLanguage = selectedLanguages[0];
+  savedTranscript.translatedLanguage = selectedLanguages[1];
   recognition.lang = firstSelectedLanguageCode;
   recognition.start();
 });
 
 $('.secondTalk').click(() => {
-  getLanguages();
+  const selectedLanguages = getLanguages();
+  savedTranscript.originalLanguage = selectedLanguages[1];
+  savedTranscript.translatedLanguage = selectedLanguages[0];
   recognition2.lang = secondSelectedLanguageCode;
   recognition2.start();
+});
+
+$('.save').click(() => { 
+  $.ajax({
+    method: 'POST',
+    url: '/transcript',
+    contentType: 'application/x-www-form-urlencoded',
+    data: {
+      originalTranscript: savedTranscript.originalTranscript,
+      translatedTranscript: savedTranscript.translatedTranscript,
+      originalLanguage: savedTranscript.originalLanguage,
+      translatedLanguage: savedTranscript.translatedLanguage
+    },
+    success: function(data) { 
+      console.log('save to SQL successful');
+    }
+  })
 });
 
 function talk(transcript) { 
@@ -89,9 +121,8 @@ function getLanguages() {
   let firstSelectedLanguage = $('#firstLanguages option:selected').text();
   firstSelectedLanguageCode = languagesCode[firstSelectedLanguage];
   let secondSelectedLanguage = $('#secondLanguages option:selected').text();
-  console.log('second language: ', secondSelectedLanguage);
   secondSelectedLanguageCode = languagesCode[secondSelectedLanguage];
-  console.log('second language code: ', secondSelectedLanguageCode);
+  return [firstSelectedLanguage, secondSelectedLanguage];
 }
 
 function populateLanguageDropDownMenu() { 
@@ -102,10 +133,9 @@ function populateLanguageDropDownMenu() {
       data.forEach(language => { 
         $('#firstLanguages').append(`<option>${language.name}</option>`);
         $('#secondLanguages').append(`<option>${language.name}</option>`);
-      })
+      });
     }
-  })
-  
+  });
 }
 
 function myFunction() {

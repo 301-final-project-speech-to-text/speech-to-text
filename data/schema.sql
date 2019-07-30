@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS lang ;
-DROP TABLE IF EXISTS trans ;
+DROP TABLE IF EXISTS trans;
+DROP TABLE IF EXISTS lang;
 
 CREATE TABLE lang (
   id SERIAL PRIMARY KEY,
@@ -31,4 +31,6 @@ VALUES ('English'),
 
 INSERT INTO trans (string, translation, lang_name_id, lang_trans_name_id ) 
 VALUES ('Hello', 'Привет', '1', '8'),
-('Привет', 'Hola', '8', '9')
+('Привет', 'Hola', '8', '9');
+
+
