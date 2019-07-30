@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-DROP TABLE IF EXISTS trans;
-DROP TABLE IF EXISTS lang;
-=======
 DROP TABLE IF EXISTS lang CASCADE;
 DROP TABLE IF EXISTS trans CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
->>>>>>> 36d716a9569949897d9bdea0db3aa886556ece1a
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -49,17 +44,9 @@ VALUES ('Nadya'),
 ('Sam'),
 ('Quang');
 
-<<<<<<< HEAD
-INSERT INTO trans (string, translation, lang_name_id, lang_trans_name_id ) 
-VALUES ('Hello', 'Привет', '1', '8'),
-('Привет', 'Hola', '8', '9');
-
-
-=======
 INSERT INTO trans (string, translation, lang_name_id, lang_trans_name_id, user_id ) 
 	VALUES ('Пока', 'Goodbye', (select id
   from lang where name = 'Russian'
   ), (select id
   from lang where name = 'English'), 
   (select id from users where users.name='Nadya'));
->>>>>>> 36d716a9569949897d9bdea0db3aa886556ece1a

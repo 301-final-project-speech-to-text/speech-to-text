@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('head.ejs') %>
+<body>
+    <%- include('header.ejs') %>
+
+    <h2>Saved Phrases</h2>
+
+    <section id="savedPhrasesTable">
+      <div id="originalPhrase">
+        <% savedPhrases.forEach(phrase => { %>
+        <p><span> <%= phrase.original %> </span> <%= phrase.string %> </p> 
+        <% }) %>
+      </div>
+      <div id="translatedPhrase">
+        <% savedPhrases.forEach(phrase => { %>
+        <p><span> <%= phrase.translated %> </span> <%= phrase.translation %> <span class="delete" data-id= <%= phrase.id %> >X</span></p> 
+        
+        <% }) %>
+      </div>
+    </section>
+
+    <%- include('footer.ejs') %>
+</body>
+</html>
