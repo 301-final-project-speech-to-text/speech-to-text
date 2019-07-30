@@ -19,6 +19,7 @@ app.listen(PORT, () => {
 })
 
 app.get('/', getHomePage);
+app.get('/about', getAboutPage);
 app.get('/saved', getSavedPhrases);
 app.delete('/saved/:id', deleteSavedPhrases);
 app.get('/translate', translateHandler);
@@ -30,6 +31,14 @@ function getHomePage(req, res) {
     res.render('./index');
   } catch (error) {
     console.error(error);
+  }
+}
+
+function getAboutPage(req, res) { 
+  try { 
+    res.render('./about-us');
+  } catch (error) { 
+    console.log(error);
   }
 }
 

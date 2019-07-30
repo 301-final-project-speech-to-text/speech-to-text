@@ -18,26 +18,27 @@
   </section>
 
   <section id="firstLanguageWindow">
-    <select name="firstLanguages" id="firstLanguages">
-    </select>
+    <div class="windowHeader">
+      <select name="firstLanguages" id="firstLanguages">
+      </select>
       <button class="firstTalk">Talk</button>
+    </div>
       <h3 class="firstWords"></h3>
   </section>
 
   <section id="secondLanguageWindow">
-    <select name="secondLanguages" id="secondLanguages">
-    </select>
-      <button class="secondTalk">Talk</button>
-      <h3 class="secondWords"></h3>
+    <div class="windowHeader">
+      <select name="secondLanguages" id="secondLanguages">
+        </select>
+          <button class="secondTalk">Talk</button>
+    </div>
+    <h3 class="secondWords"></h3>
   </section>
 
-  <button class="save">Save Phrase</button>
+  <section id="saveWindow">
+      <button class="save">Save Phrase</button>
+  </section>
   
   <%- include('footer.ejs') %>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="./js/app.js"></script>
 </body>
 </html>
