@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "erudite-scholar-248322",
+  "private_key_id": "91d9a255a3dcaba34c3456f4df1d0f25e9888170",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDgmgHtAFOVpLW4\nYNK4AkYw3ENsJKjO9/Gx+78n8qBjFNQ7UGJa8adbp4jCSKyf1bi3C3QE3A0CazFE\neWFbCNe1rGjUyaXfw2KoWVM5OPHfPMMjqbkZgC+GMDB/7Fznw4lAA6BUoKOg6slx\nwUxACbs1e+aOyZutrC2EBqUBG+uKfngmUNiQbHGQDRrASGbM7mb4jJ46pvHtCb5Q\nqQkm5T55LbfgldlLuKk/qoXWvhR06DsyzN7UMhzfzm0u9suS2NxQj8TEqzXmFZTP\nJ/tZaiVbB/Ccps63q1eY4EPInE+2oNVa1UPbJEpG1XOUib/0syYZ6KqC7qSs5svY\naYm4rcFJAgMBAAECggEAI09rCpbQzTeoHwzPzACFhvR2ABgyVtmJrLzilFXza6hQ\nZmPQlrIjqMfpuvugcf9wawyYqJPs0qrGA9keWmjFOulYUM3D724hAk0KxbYDZqB/\noEl0UYNC1XKZiV8ASyqFVyRKzksz9l47HdBxG6c8AKBSQrQE7tShEj7WLZq1WOAW\nO1e7mpN7yn4hh/26fPsYE49nU8CWZAp2geta/rP6PiFEjd0/Tb+e86SfB9ljjCpm\nN9ti3DGMMEzmR64dWHVbhgf+irtN8gd/sF+1UCypxbqVCZHFm/fANUMzATdEn6vo\nB9Or9UudcLcrUFijEJvqMcCHBYgGMqLW9R63VXL6pQKBgQD04PMTB079iYO6LQcM\nk6/pM7Xz/5C0l1tDNlSJ/nGqZpBeXSMdWTsT+PqqC+Wv1KpSdAeeaQ6AAgHauhQ8\nR1/QDm50rQPCYhB/9/y2nVlpwFATXzYYLEQ6AhNzgyn/Dj13Dtlqrr0FNceLPwk/\no9RAmj8KgBDn3PPokW3TpqHOxQKBgQDqzU8J+VHeyqomM5PIA+WFSZAfTC1cqCHX\nlA5+ZhPof6Dng6oQLutQFZtmO1PYek1w7co780tO2iHOXaTI0A4aR96GCOlYlhDn\nJqF6OD4g9lZSku+LP+3BKnWFZGRvoWY6FVqJnzR4ruuU0w19JefD7t7CPfZl83jg\naJPg85VQtQKBgQCmHfuHSwvwvlqX73e6tm08+5FRJmtZttt4KuEKg4tEFzOUcAYk\nIKYNFHem5083CkNIj+GjOo1VlQcBA/46Lgj3MPMJP10vfirHRMkwcGl5bbZkjdA6\ncb0OxN3BHJdeqKBVpcMjtcoQQL1O3sI9Y7vW30woqVvOjnr/p7gjPgTCKQKBgGIi\ngxlZEeW68Jhc0DQ1pLUrhMf/76mdP9+5KsGbalCvHxIEDo0K/yCOl0+IFkgQ/dLo\nH7Ekw2Hme2Cj9N5VTr+fMBr3GIgE2HWzyKOrZBQkwPlsHiAmDPnCBDJHPk8FtxMp\nn5iLaMPT3/RorWeT8yUJ7iJjAVulAe1Q6BWJ2OtNAoGBAKTP0v78813gpQ+u+ZNb\nEsI/nsumbyEjhJC3f7Z/9Nc/MsYTqSeYtRqnRgmWIChYDPHtfGcQc+5VXwabiHlY\nxbC14NkH2hWOlwevia2RV/ePwFn592Etyal+tbijpR4ihJIfUuQ9fRQAUMIm136m\nux0kD0laRHwWNOcSSdtAqG7b\n-----END PRIVATE KEY-----\n",
+  "client_email": "translation-school-app@erudite-scholar-248322.iam.gserviceaccount.com",
+  "client_id": "114997745494555605092",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/translation-school-app%40erudite-scholar-248322.iam.gserviceaccount.com"
+}

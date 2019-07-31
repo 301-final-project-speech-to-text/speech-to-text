@@ -43,14 +43,14 @@
 
 /* //////////////////////////////////////////////////////////////////////////////ABOUT ME CSS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-.team-section {
+.team {
   overflow: hidden;
   text-align: center;
   padding: 60px;
 
 }
 
-.team-section h1 {
+.team h1 {
   text-transform: uppercase;
   margin-bottom: 10px;
   color: white;
@@ -65,11 +65,11 @@
   background: midnightblue;
 }
 
-.ps{
+.picture {
   margin-bottom: 40px;
 }
 
-.ps a{
+.picture a{
   display: inline-block;
   margin: 0 15px;
   width: 35%;
@@ -78,14 +78,14 @@
   border-radius: 30%;
 }
 
-.ps a img{
+.picture a img{
   width: 100px;
   height: 100px;
   filter: grayscale(100%);
   transition: 0.4s all;  
 }
 
-.ps a:hover > img {
+.picture a:hover > img {
   filter: none;
 }
 
