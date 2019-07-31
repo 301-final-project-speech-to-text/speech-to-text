@@ -4,35 +4,80 @@
 // Alert user to submit their name. Store their name in local storage. Store in name: 'value'.
 
 //Local storage global variables
-var userName='';
-var currentUser = '';
-
-var currentUser = localStorage.Current;
-console.log(currentUser, 'Do we have a currentUser?');
-
-function User(name) {
-  this.name = name;
-}
+checkUser();
 
 //User login and interaction with local storage
-var form = document.getElementById('userLogin');
 
-var addUser = function(event) {
-  event.preventDefault();
-  var userEntry = event.target.userName.value;
-  if (localStorage.userEntry) {
-    userName = localStorage.userEntry;
-    currentUser = userName;
-  } else {
-    userName = event.target.userName.value;
-    currentUser = userName;
-    localStorage.setItem('Current', currentUser);
-    localStorage.setItem(`'${userName}'`, userName);
+function checkUser() { 
+  if (!localStorage.username) { 
+    $('#user-login').show();
   }
-  //insert code to hide the login section
-};
+}
 
-form.addEventListener('submit', addUser);
+async function validateUserSignUp(event) { 
+  event.preventDefault();
+  const usernameInput = $('#userNameSignup').val();
+  let validate = false;
+  await $.ajax({
+    method: 'GET',
+    url: '/users',
+    success: function(data) { 
+      console.log(data);
+      if (!data.includes(usernameInput)) {
+        validate = true;
+      }
+    }
+  })
+  if (validate === false) { 
+    $('#userNameSignUp').setCustomValidity('This username is already taken')
+    return false;
+  } else {
+    localStorage.setItem('username', `${usernameInput}`);
+    addUser(usernameInput);
+    $('#user-signup').hide();
+  }
+}
+
+async function validateUserLogin(event) { 
+  event.preventDefault();
+  const usernameInput = $('#userNameLogin').val();
+  let validate = false;
+  await $.ajax({
+    method: 'GET',
+    url: '/users',
+    success: function(data) { 
+      console.log(data);
+      if (data.includes(usernameInput)) {
+        validate = true;
+      }
+    }
+  })
+  if (validate === false) { 
+    return false;
+  } else {
+    localStorage.setItem('username', `${usernameInput}`);
+    addUser(usernameInput);
+    $('#user-login').hide();
+  }
+}
+
+function addUser(username) { 
+  $.ajax({
+    method: 'POST',
+    url: '/users',
+    contentType: 'application/x-www-form-urlencoded',
+    data: {username: username}
+  })
+}
+
+function getSignUpPage() { 
+  $('#user-login').hide();
+  $('#user-signup').show();
+}
+
+$('#userLogin').on('submit', validateUserLogin);
+$('#userSignup').on('submit', validateUserSignUp);
+$('#signUpPage').click(getSignUpPage);
 
 /* #endregion Local Storage */
 
@@ -141,6 +186,7 @@ $('.secondTalk').click(() => {
 
 //
 $('.save').click(() => {
+  const currentUser = localStorage.getItem('username');
   $.ajax({
     method: 'POST',
     url: '/transcript',
@@ -149,7 +195,8 @@ $('.save').click(() => {
       originalTranscript: savedTranscript.originalTranscript,
       translatedTranscript: savedTranscript.translatedTranscript,
       originalLanguage: savedTranscript.originalLanguage,
-      translatedLanguage: savedTranscript.translatedLanguage
+      translatedLanguage: savedTranscript.translatedLanguage,
+      username: currentUser
     },
     success: function(data) {
       console.log('save to SQL successful');
@@ -165,6 +212,23 @@ $('.delete').click((event) => {
     url: `/saved/${id}`
   });
 });
+
+//
+$('#saved').click((event) => { 
+  const username = localStorage.getItem('username');
+  $.ajax({
+    method: 'GET',
+    url: '/saved',
+    data: {username: username},
+    // success: function(data) { 
+    //   window.location.href = "/saved";
+    // }
+    success: (html) => {
+      $('section').remove();
+      $('nav').after(html);
+    }
+  })
+})
 
 //
 function talk(transcript) {
