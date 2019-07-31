@@ -14,7 +14,7 @@
       </div>
       <div id="translatedPhrase">
         <% savedPhrases.forEach(phrase => { %>
-        <p><span class='languageCode'> <%= phrase.translated %> </span> <%= phrase.translation %> <span class="delete" data-id= <%= phrase.id %> >X</span></p> 
+        <p><span class='languageCode'> <%= phrase.translated %> </span> <%= phrase.translation %> <span class="delete" data-id= <%- phrase.id %>>X</span></p> 
         <% }) %>
       </div>
     </section>
