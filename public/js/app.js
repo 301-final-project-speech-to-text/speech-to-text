@@ -223,18 +223,19 @@ $('.delete').click((event) => {
 //
 $('#saved').click((event) => { 
   const username = localStorage.getItem('username');
+  let validate = false;
+
   $.ajax({
     method: 'GET',
     url: '/saved',
     data: {username: username},
-    // success: function(data) { 
-    //   window.location.href = "/saved";
-    // }
     success: (html) => {
       $('section').remove();
-      $('nav').after(html);
+      if (html) {validate = true;}
     }
   })
+  if (validate === true) {$('nav').after(html);}
+  else {('nav').after('You don\'t have any saved phrases right now.')}
 })
 
 //
