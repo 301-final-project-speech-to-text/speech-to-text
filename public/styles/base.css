@@ -1,5 +1,5 @@
 body { 
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -35,7 +35,6 @@ body {
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 .dropdown-content a {
   color: black;
@@ -227,7 +226,7 @@ body {
   height: 70%;
   background: rgb(148, 177, 155);
   border: none;
-  font-size: 1em;
+  font-size: 1.1em;
   padding: 10px;
   color: #eee;
 }
@@ -244,6 +243,17 @@ body {
 
 #firstLanguages option, #secondFirstLanguages option { 
   background: #eee;
+}
+
+#userSection {
+  display: flex;
+  flex-direction: column;
+}
+
+#signOut { 
+  border-radius: 70px;
+  border: none;
+  
 }
 
 /* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
@@ -267,25 +277,40 @@ body {
 
 #savedPhrasesTable { 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-grow: 15;
+  background: #E3BB88;
+  overflow: auto;
+}
+
+#phrase { 
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px;
 }
 
 #originalPhrase { 
   display: flex;
   flex-direction: column;
   background: #E3BB88;
-  flex-grow: 1;
+  width: 45%;
 }
+
+/* #translatedList > li, #originalList > li { 
+  color: #644749;
+} */
 
 #translatedPhrase { 
   display: flex;
   flex-direction: column;
-  background: #DB9864;
-  flex-grow: 1;
+  width: 45%;
+}
+
+.delete { 
+  flex-grow: 0.5;
 }
 
 .languageCode { 
-  color: rgb(148, 177, 155);
+  color: #B1695A;
   padding-right: 5px;
 }

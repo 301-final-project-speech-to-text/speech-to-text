@@ -1,24 +1,27 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-    <%- include('head.ejs') %>
-<body>
-    <%- include('header.ejs') %>
-
-    <h2>Saved Phrases</h2> -->
-
-    <section id="savedPhrasesTable">
-      <div id="originalPhrase">
-        <% savedPhrases.forEach(phrase => { %>
-        <p><span class='languageCode'> <%= phrase.original %> </span> <%= phrase.string %> </p> 
+<section id="savedPhrasesTable">
+  <!-- <div id="originalPhrase">
+    <ul id="originalList">
+      <% savedPhrases.forEach(phrase => { %>
+      <li><span class='languageCode'> (<%= phrase.original %>) </span> <%= phrase.string %> </li> 
+      <% }) %>
+    </ul>
+  </div>
+  <div id="translatedPhrase">
+    <ul id="translatedList">
+      <% savedPhrases.forEach(phrase => { %>
+        <li><span class='languageCode'> (<%= phrase.translated %>) </span> <%= phrase.translation %> <span class="delete" data-id= <%= phrase.id %>>X</butt></li> 
         <% }) %>
-      </div>
-      <div id="translatedPhrase">
-        <% savedPhrases.forEach(phrase => { %>
-        <p><span class='languageCode'> <%= phrase.translated %> </span> <%= phrase.translation %> <span class="delete" data-id= <%= phrase.id %> >X</span></p> 
-        <% }) %>
-      </div>
-    </section>
-
-    <!-- <%- include('footer.ejs') %>
-</body>
-</html> -->
+    </ul>
+  </div> -->
+  <% savedPhrases.forEach(phrase => { %>
+  <div id="phrase">
+    <div id='originalPhrase'>
+      <p><span class='languageCode'> (<%= phrase.original %>) </span> <%= phrase.string %> </p>
+    </div>
+    <div id='translatedPhrase'>
+      <p><span class='languageCode'> (<%= phrase.translated %>) </span> <%= phrase.translation %> </p>
+    </div>
+    <button class="delete" data-id= `${<%= phrase.id %>}` >X</button>
+  </div>
+  <% }) %>
+</section>
