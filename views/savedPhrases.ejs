@@ -9,13 +9,12 @@
     <section id="savedPhrasesTable">
       <div id="originalPhrase">
         <% savedPhrases.forEach(phrase => { %>
-        <p><span> <%= phrase.original %> </span> <%= phrase.string %> </p> 
+        <p><span class='languageCode'> <%= phrase.original %> </span> <%= phrase.string %> </p> 
         <% }) %>
       </div>
       <div id="translatedPhrase">
         <% savedPhrases.forEach(phrase => { %>
-        <p><span> <%= phrase.translated %> </span> <%= phrase.translation %> <span class="delete" data-id= <%= phrase.id %> >X</span></p> 
-        
+        <p><span class='languageCode'> <%= phrase.translated %> </span> <%= phrase.translation %> <span class="delete" data-id= <%= phrase.id %> >X</span></p> 
         <% }) %>
       </div>
     </section>

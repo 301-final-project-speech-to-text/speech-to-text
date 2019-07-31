@@ -223,9 +223,6 @@ $('#saved').click((event) => {
     method: 'GET',
     url: '/saved',
     data: {username: username},
-    // success: function(data) { 
-    //   window.location.href = "/saved";
-    // }
     success: (html) => {
       $('section').remove();
       $('nav').after(html);
