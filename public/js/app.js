@@ -215,17 +215,6 @@ $('.save').click(() => {
 });
 
 //
-$('.delete').click((event) => {
-  console.log('got in delete')
-  const id = $(event.target).data('id');
-  $.ajax({
-    method: 'DELETE',
-    url: `/saved/${id}`
-  });
-  $('.delete').parent().remove();
-});
-
-//
 function talk(transcript) {
   const speech = new SpeechSynthesisUtterance();
   speech.transcript = transcript;
@@ -299,3 +288,11 @@ $('#signOut').click((event) => {
   localStorage.clear();
   window.location.replace('/');
 })
+
+function deleteTrans(id) {
+  $.ajax({
+    method: 'DELETE',
+    url: `/saved/${id}`
+  });
+  $(`.delete[data-id=${id}]`).parent().remove();
+}

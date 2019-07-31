@@ -1,18 +1,4 @@
 <section id="savedPhrasesTable">
-  <!-- <div id="originalPhrase">
-    <ul id="originalList">
-      <% savedPhrases.forEach(phrase => { %>
-      <li><span class='languageCode'> (<%= phrase.original %>) </span> <%= phrase.string %> </li> 
-      <% }) %>
-    </ul>
-  </div>
-  <div id="translatedPhrase">
-    <ul id="translatedList">
-      <% savedPhrases.forEach(phrase => { %>
-        <li><span class='languageCode'> (<%= phrase.translated %>) </span> <%= phrase.translation %> <span class="delete" data-id= <%= phrase.id %>>X</butt></li> 
-        <% }) %>
-    </ul>
-  </div> -->
   <% savedPhrases.forEach(phrase => { %>
   <div id="phrase">
     <div id='originalPhrase'>
@@ -21,7 +7,7 @@
     <div id='translatedPhrase'>
       <p><span class='languageCode'> (<%= phrase.translated %>) </span> <%= phrase.translation %> </p>
     </div>
-    <button class="delete" data-id= `${<%= phrase.id %>}` >X</button>
+    <button onclick='deleteTrans(`<%= phrase.id %>`)' class="delete" data-id= <%= phrase.id %> >X</button> 
   </div>
   <% }) %>
 </section>

@@ -253,19 +253,22 @@ body {
 #signOut { 
   border-radius: 70px;
   border: none;
-  
+
 }
 
 /* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
 
 #user-login, #user-signup { 
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 2;
   padding: 1rem;
   background: #DB9864;
+  display: none;
 }
 
 #signUpPage { 
