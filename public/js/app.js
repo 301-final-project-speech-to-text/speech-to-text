@@ -16,8 +16,10 @@ function checkUser() {
 
 async function validateUserSignUp(event) { 
   event.preventDefault();
+  const usernameToValidate = document.querySelector('#userNameSignup');
   const usernameInput = $('#userNameSignup').val();
   let validate = false;
+  
   await $.ajax({
     method: 'GET',
     url: '/users',
@@ -29,14 +31,14 @@ async function validateUserSignUp(event) {
     }
   })
   if (validate === false) { 
-    $('#userNameSignUp').setCustomValidity('This username is already taken')
-    return false;
+    usernameToValidate.setCustomValidity('This username is already taken');
   } else {
     localStorage.setItem('username', `${usernameInput}`);
     addUser(usernameInput);
     $('#user-signup').hide();
   }
 }
+
 
 async function validateUserLogin(event) { 
   event.preventDefault();
