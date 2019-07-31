@@ -5,7 +5,7 @@
 
 //Local storage global variables
 checkUser();
-
+$('#user').text(showUsername());
 //User login and interaction with local storage
 
 function checkUser() { 
@@ -56,7 +56,6 @@ async function validateUserLogin(event) {
     return false;
   } else {
     localStorage.setItem('username', `${usernameInput}`);
-    addUser(usernameInput);
     $('#user-login').hide();
   }
 }
@@ -73,6 +72,10 @@ function addUser(username) {
 function getSignUpPage() { 
   $('#user-login').hide();
   $('#user-signup').show();
+}
+
+function showUsername() { 
+  return localStorage.getItem('username');
 }
 
 $('#userLogin').on('submit', validateUserLogin);

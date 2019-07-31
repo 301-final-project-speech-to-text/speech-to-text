@@ -9,7 +9,6 @@ const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
 client.connect();
 
-
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -21,9 +20,9 @@ app.listen(PORT, () => {
 app.get('/', getHomePage);
 app.get('/about', getAboutPage);
 app.get('/saved', getSavedPhrases);
+app.delete('/saved/:id', deleteSavedPhrases);
 app.get('/users', getUsersList);
 app.post('/users', saveUsers);
-app.delete('/saved/:id', deleteSavedPhrases);
 app.get('/translate', translateHandler);
 app.get('/languages', getLanguagesHandler);
 app.post('/transcript', saveToDatabase);
