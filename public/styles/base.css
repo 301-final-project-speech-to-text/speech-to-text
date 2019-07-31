@@ -1,18 +1,20 @@
 
-/* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-.dropbutton {
+/* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/*  */
+.dropbtn {
+  background-color: #3498DB;
   color: white;
-  background-color: rgb(0, 110, 255);
-  font-size: 14px;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
   cursor: pointer;
-  padding: 10px;
 }
 
-.dropbutton:hover {
-  background-color: brown
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
 }
 
-.dropdownContainer {
+.dropdown {
   position: relative;
   display: inline-block;
 }
@@ -20,28 +22,21 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
-  min-width: 200px;
+  background-color: #f1f1f1;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
-.dropdown-content {
+.dropdown-content a {
   color: black;
-  padding: 10px 14px;
+  padding: 12px 16px;
+  text-decoration: none;
   display: block;
 }
-.dropdown-content a:hover 
 
-* {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+.dropdown-content a:hover {background-color: #ddd}
 
-.team-section {
-  overflow: hidden;
-  text-align: center
-}
+.show {display:block;}
 
 
 /* //////////////////////////////////////////////////////////////////////////////ABOUT ME CSS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */

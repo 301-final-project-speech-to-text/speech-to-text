@@ -129,7 +129,7 @@ async function getLanguagesHandler(req, res) {
   res.send(languages);
 }
 
-async function saveToDatabase(req, res) { 
+function saveToDatabase(req, res) { 
   const SQL = `
   INSERT INTO trans (string, translation, lang_name_id, lang_trans_name_id, user_id) 
   VALUES ($1, $2, (select id
