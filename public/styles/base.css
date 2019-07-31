@@ -1,3 +1,323 @@
+
+body { 
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/*  */
+.dropbtn {
+  background-color: rgb(148, 177, 155);
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  height: 50%;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: rgb(148, 177, 155);
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 3em;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content span {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.show {display:block;}
+
+
+/* //////////////////////////////////////////////////////////////////////////////ABOUT ME CSS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.team-section {
+  overflow: hidden;
+  text-align: center;
+  padding: 60px;
+
+}
+
+.team-section h1 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 30px;
+}
+
+.border{
+  display: block;
+  margin: auto;
+  width: 160px;
+  height: 4px;
+  background: midnightblue;
+}
+
+.ps{
+  margin-bottom: 40px;
+}
+
+.ps a{
+  display: inline-block;
+  margin: 0 15px;
+  width: 35%;
+  height: 35%;
+  overflow: hidden;
+  border-radius: 30%;
+}
+
+.ps a img{
+  width: 100px;
+  height: 100px;
+  filter: grayscale(100%);
+  transition: 0.4s all;  
+}
+
+.ps a:hover > img {
+  filter: none;
+}
+
+.section{
+  width: 300px;
+  margin: auto;
+  font-size: 20px;
+  color: white;
+  text-align: justify;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.section:target{
+  height: auto;
+}
+
+.name{
+  display: block;
+  margin-bottom: 10px;
+  /* margin-top: 10px; */
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 44px;
+}
+
+li{
+  font-size: 18px;
+  color: white;
+  margin: 20px;
+}
+
+nav > ul > li > a{
+  text-decoration: none;
+  color:white;
+}
+
+
+/* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
+
+#appName { 
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2em;
+  color: #463233;
+}
+
+footer { 
+  background: #644749;
+  /* flex-grow: 1; */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+#firstLanguageWindow { 
+  display: flex;
+  background: #E3BB88;
+  flex-grow: 8;
+  padding: 10px;
+  flex-direction: column;
+}
+
+#secondLanguageWindow { 
+  display: flex;
+  background: #DB9864;
+  flex-grow: 8;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.firstWords, .secondWords { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.windowHeader { 
+  display: flex;
+  justify-content: space-between;
+}
+
+nav { 
+  background: rgb(148, 177, 155);
+  padding-right: 5px;
+}
+
+#saveWindow { 
+  display: flex;
+  background: #B1695A;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 5px;
+}
+
+body { 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.firstWords, .secondWords { 
+  background: #eee;
+  height: 80%;
+  width: 90%;
+  margin-top: 20px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 7px 4px #644749;
+}
+
+.firstTalk::before, .secondTalk::before { 
+  content: "";
+  background: red;
+  border-radius: 50%;
+}
+
+.save { 
+  border-radius: 70px;
+  box-shadow: 0 4px 2px #644749;
+  height: 70%;
+  background: rgb(148, 177, 155);
+  border: none;
+  font-size: 1.1em;
+  padding: 10px;
+  color: #eee;
+}
+
+.save:hover { 
+  background: rgb(117, 138, 122);
+}
+
+#saveWindow { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#firstLanguages option, #secondFirstLanguages option { 
+  background: #eee;
+}
+
+#userSection {
+  display: flex;
+  flex-direction: column;
+}
+
+#signOut { 
+  border-radius: 70px;
+  border: none;
+
+}
+
+/* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
+
+#user-login, #user-signup { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  padding: 1rem;
+  background: #DB9864;
+  display: none;
+}
+
+#signUpPage { 
+  color: blue;
+}
+
+
+/* ////////////////////////////////// Saved Phrases Table ///////////////////////////////////// */
+
+#savedPhrasesTable { 
+  display: flex;
+  flex-direction: column;
+  flex-grow: 15;
+  background: #E3BB88;
+  overflow: auto;
+}
+
+#phrase { 
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+
+#originalPhrase { 
+  display: flex;
+  flex-direction: column;
+  background: #E3BB88;
+  width: 45%;
+}
+
+/* #translatedList > li, #originalList > li { 
+  color: #644749;
+} */
+
+#translatedPhrase { 
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.delete { 
+  flex-grow: 0.5;
+}
+
+.languageCode { 
+  color: #B1695A;
+  padding-right: 5px;
+=======
 body { 
   font-family: sans-serif;
 }
@@ -362,4 +682,5 @@ body {
 .languageCode { 
   color: rgb(148, 177, 155);
   padding-right: 5px;
+
 }

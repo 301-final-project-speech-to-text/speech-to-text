@@ -19,7 +19,8 @@ app.listen(PORT, () => {
 
 app.get('/', getHomePage);
 app.get('/about', getAboutPage);
-app.get('/saved', getSavedPhrases);
+app.get('/saved', getSavedPage);
+app.post('/saved', getSavedPhrases);
 app.delete('/saved/:id', deleteSavedPhrases);
 app.get('/users', getUsersList);
 app.post('/users', saveUsers);
@@ -30,6 +31,14 @@ app.post('/transcript', saveToDatabase);
 function getHomePage(req, res) { 
   try {
     res.render('./index');
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function getSavedPage(req, res) { 
+  try {
+    res.render('./savedPage');
   } catch (error) {
     console.error(error);
   }
@@ -150,7 +159,7 @@ async function getSavedPhrases(req, res) {
   JOIN users ON trans.user_id = users.id 
   WHERE users.name = $1;`;
 
-  const value = [req.query.username]
+  const value = [req.body.username]
   console.log(value);
   const result = await client.query(SQL, value);
   const savedPhrases = result.rows;

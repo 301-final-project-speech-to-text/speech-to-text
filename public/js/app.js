@@ -6,6 +6,7 @@
 //Local storage global variables
 checkUser();
 $('#user').text(showUsername());
+loadHTMLSavePage();
 //User login and interaction with local storage
 
 function checkUser() { 
@@ -35,6 +36,7 @@ async function validateUserSignUp(event) {
   } else {
     localStorage.setItem('username', `${usernameInput}`);
     addUser(usernameInput);
+    $('#user').text(showUsername());
     $('#user-signup').hide();
   }
 }
@@ -60,6 +62,7 @@ async function validateUserLogin(event) {
     newUser.setCustomValidity('Looks like we haven\'t met yet! Please create your username at the sign-in link below.');
   } else {
     localStorage.setItem('username', `${usernameInput}`);
+    $('#user').text(showUsername());
     $('#user-login').hide();
   }
 }
@@ -212,33 +215,6 @@ $('.save').click(() => {
 });
 
 //
-$('.delete').click((event) => {
-  const id = $(event.target).data('id');
-  $.ajax({
-    method: 'DELETE',
-    url: `/saved/${id}`
-  });
-});
-
-//
-$('#saved').click((event) => { 
-  const username = localStorage.getItem('username');
-  let validate = false;
-
-  $.ajax({
-    method: 'GET',
-    url: '/saved',
-    data: {username: username},
-    success: (html) => {
-      $('section').remove();
-      if (html) {validate = true;}
-    }
-  })
-  if (validate === true) {$('nav').after(html);}
-  else {('nav').after('You don\'t have any saved phrases right now.')}
-})
-
-//
 function talk(transcript) {
   const speech = new SpeechSynthesisUtterance();
   speech.transcript = transcript;
@@ -289,3 +265,34 @@ window.onclick = function(event) {
   }
 }
 
+async function loadHTMLSavePage() { 
+  console.log(window.location.pathname.slice(-5));
+  if (window.location.pathname.slice(-5) === 'saved') {
+    const username = localStorage.getItem('username');
+    let validate = false;
+  
+    await $.ajax({
+      method: 'POST',
+      url: '/saved',
+      contentType: 'application/x-www-form-urlencoded',
+      data: {username: username},
+      success: (html) => {
+        $('nav').after(html);
+        // if () {$('nav').after('You dont have any saved phrases')}
+      }
+    })
+  }
+}
+
+$('#signOut').click((event) => {
+  localStorage.clear();
+  window.location.replace('/');
+})
+
+function deleteTrans(id) {
+  $.ajax({
+    method: 'DELETE',
+    url: `/saved/${id}`
+  });
+  $(`.delete[data-id=${id}]`).parent().remove();
+}
