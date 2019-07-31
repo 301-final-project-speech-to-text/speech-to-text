@@ -23,7 +23,7 @@ https://goya-translation.herokuapp.com/
 
 ## Instructions to run the app on your computer
 - npm install in terminal
-- open PSQL, run command: CREATE DATABASE goya
+- open PSQL, run command: CREATE DATABASE goya;
 - add schema to your database, run command: psql -d goya -f ./data/schema.sql
 - Google Cloud API key: Follow the instructions in the following link to create your API key
   - https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-install-nodejs
@@ -31,6 +31,7 @@ https://goya-translation.herokuapp.com/
   - include your localhost port: PORT = 3000
   - the google API: GOOGLE_APPLICATION_CREDENTIALS = /pathfromtheplaceyoustoredyourGoogleAPIJSONfile
   - the database: (Windows) DATABASE_URL = postgres://user:password@localhost:5432/goya (Mac) DATABASE_URL = postgres://@localhost:5432/goya
+- Enable Cloud API
 - run node server.js
 - open web browser and go to localhost:3000 to view the homepage
 
