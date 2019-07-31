@@ -1,47 +1,44 @@
 
-/* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-.dropbutton {
+/* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+/*  */
+.dropbtn {
+  background-color: #3498DB;
   color: white;
-  background-color: rgb(0, 110, 255);
-  font-size: 14px;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
   cursor: pointer;
-  padding: 10px;
+  height: 50%;
 }
 
-.dropbutton:hover {
-  background-color: brown
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
 }
 
-.dropdownContainer {
+.dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
-  min-width: 200px;
+  background-color: #f1f1f1;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
-.dropdown-content {
+.dropdown-content a {
   color: black;
-  padding: 10px 14px;
+  padding: 12px 16px;
+  text-decoration: none;
   display: block;
 }
-.dropdown-content a:hover
 
-* {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+.dropdown-content a:hover {background-color: #ddd}
 
-.team-section {
-  overflow: hidden;
-  text-align: center
-}
+.show {display:block;}
 
 
 /* //////////////////////////////////////////////////////////////////////////////ABOUT ME CSS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -126,3 +123,80 @@ nav > ul > li > a{
   text-decoration: none;
   color:white;
 }
+
+
+ /* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
+
+ footer { 
+   background: #644749;
+   flex-grow: 1;
+ }
+
+ #firstLanguageWindow { 
+   display: flex;
+   background: #E3BB88;
+   flex-grow: 4;
+   padding: 10px;
+   flex-direction: column;
+ }
+
+ #secondLanguageWindow { 
+   display: flex;
+   background: #DB9864;
+   flex-grow: 4;
+   padding: 10px;
+   flex-direction: column;
+ }
+
+ .windowHeader { 
+   display: flex;
+   justify-content: space-between;
+ }
+
+ nav { 
+   background: rgb(148, 177, 155);
+   display: flex;
+   flex-grow: 1;
+ }
+
+ #saveWindow { 
+   display: flex;
+   background: #B1695A;
+   flex-grow: 0.5;
+   justify-content: center;
+ }
+
+ body { 
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   width: 100vw;
+ }
+
+ .firstWords, .secondWords { 
+   background: #eee;
+   height: 80%;
+   width: 90%;
+   margin-top: 20px;
+   margin: auto;
+   border-radius: 10px;
+   box-shadow: 0 7px 4px #644749;
+ }
+
+
+ /* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
+
+ #user-login, #user-signup { 
+   display: none;
+   position: fixed;
+   height: 100vh;
+   width: 100vw;
+   z-index: 2;
+   padding: 1rem;
+   background: #DB9864;
+ }
+
+ #signUpPage { 
+   color: blue;
+ }
+

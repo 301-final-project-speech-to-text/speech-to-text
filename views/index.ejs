@@ -4,40 +4,55 @@
 <%- include('head.ejs') %>
 
 <body>
-
-    <%- include('header.ejs') %>
-
+  
   <section id="user-login">
     <h2>
     Welcome to Goya! Your personal translation app.
     </h1>
     
     <form id="userLogin">
-      <input id="userName" type="text" placeholder="Name"/>
+      <input id="userNameLogin" type="text" placeholder="Enter Your Username" required/>
+      <button id="login">Login</button>
+    </form>
+      <p>Click <span id="signUpPage">here</span> to sign up if you dont have an account</p>
+  </section>
+
+  <section id="user-signup">
+    <h2>
+    Welcome to Goya! Your personal translation app.
+    </h1>
+    
+    <form id="userSignup">
+      <input id="userNameSignup" type="text" placeholder="Enter A Unique Username" required/>
+      <button id="signUp">Sign Up</button>
     </form>
   </section>
 
+  <%- include('header.ejs') %>
+
+
   <section id="firstLanguageWindow">
-    <select name="firstLanguages" id="firstLanguages">
-    </select>
+    <div class="windowHeader">
+      <select name="firstLanguages" id="firstLanguages">
+      </select>
       <button class="firstTalk">Talk</button>
+    </div>
       <h3 class="firstWords"></h3>
   </section>
 
   <section id="secondLanguageWindow">
-    <select name="secondLanguages" id="secondLanguages">
-    </select>
-      <button class="secondTalk">Talk</button>
-      <h3 class="secondWords"></h3>
+    <div class="windowHeader">
+      <select name="secondLanguages" id="secondLanguages">
+        </select>
+          <button class="secondTalk">Talk</button>
+    </div>
+    <h3 class="secondWords"></h3>
   </section>
 
-  <button class="save">Save Phrase</button>
+  <section id="saveWindow">
+      <button class="save">Save Phrase</button>
+  </section>
   
   <%- include('footer.ejs') %>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="./js/app.js"></script>
 </body>
 </html>
