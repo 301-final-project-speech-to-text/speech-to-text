@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const superagent = require('superagent');
+const socket = require('socket.io');
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
 const pg = require('pg');
@@ -13,12 +14,31 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log('Listening on PORT: ', PORT);
 })
 
+const io = socket(server);
+
+io.on('connection', (socket) => { 
+  socket.on('new message', (data) => { 
+    socket.broadcast.emit('new message', {
+      username: socket.username,
+      message: data
+    })
+  })
+})
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////
+
 app.get('/', getHomePage);
 app.get('/about', getAboutPage);
+app.get('/chat', getChatPage);
 app.get('/saved', getSavedPhrases);
 app.delete('/saved/:id', deleteSavedPhrases);
 app.get('/users', getUsersList);
@@ -40,6 +60,14 @@ function getAboutPage(req, res) {
     res.render('./about-us');
   } catch (error) { 
     console.log(error);
+  }
+}
+
+function getChatPage(req, res) { 
+  try {
+    res.render('./chat');
+  } catch (error) {
+    console.error(error);
   }
 }
 

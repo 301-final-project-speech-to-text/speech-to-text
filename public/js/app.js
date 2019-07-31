@@ -34,7 +34,7 @@ async function validateUserSignUp(event) {
   } else {
     localStorage.setItem('username', `${usernameInput}`);
     addUser(usernameInput);
-    $('#user-signup').hide();
+    $('#user-signup').fadeOut();
   }
 }
 
@@ -56,7 +56,7 @@ async function validateUserLogin(event) {
     return false;
   } else {
     localStorage.setItem('username', `${usernameInput}`);
-    $('#user-login').hide();
+    $('#user-login').fadeOut();
   }
 }
 
@@ -70,7 +70,7 @@ function addUser(username) {
 }
 
 function getSignUpPage() { 
-  $('#user-login').hide();
+  $('#user-login').fadeOut();
   $('#user-signup').show();
 }
 

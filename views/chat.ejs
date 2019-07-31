@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('head.ejs') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+<body>
+
+<section id='chatForm'>
+  <select name="language" id="preferredLanguage">
+    <option selected>Choose Your Preferred Language</option>
+  </select>
+  <button id="preferredLanguageSubmit">Submit</button>
+</section>
+
+  <%- include('header.ejs') %>
+
+  <section id='chatWindow'>
+    <div id="chatMessageWindow">
+      <ul class="messages"></ul>
+    </div>
+    <form id="chatMessageForm">
+      <input type="text" name="message" id="chatMessage" placeholder="Enter Message">
+    </form>
+  </section>
+
+  <%- include('footer.ejs') %>
+  <script src="./js/chat.js"></script>
+</body>
+</html>
