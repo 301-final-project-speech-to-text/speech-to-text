@@ -42,8 +42,10 @@ async function validateUserSignUp(event) {
 
 async function validateUserLogin(event) { 
   event.preventDefault();
+  const newUser = document.querySelector('#userNameLogin');
   const usernameInput = $('#userNameLogin').val();
   let validate = false;
+
   await $.ajax({
     method: 'GET',
     url: '/users',
@@ -55,7 +57,7 @@ async function validateUserLogin(event) {
     }
   })
   if (validate === false) { 
-    return false;
+    newUser.setCustomValidity('Looks like we haven\'t met yet! Please create your username at the sign-in link below.');
   } else {
     localStorage.setItem('username', `${usernameInput}`);
     $('#user-login').hide();
