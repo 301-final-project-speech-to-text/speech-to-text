@@ -53,7 +53,7 @@ No contribution guidelines at this point.
 "As a developer, I want to convey my story and that of my team to the user."
 
 #### Wireframes
-![alt text](/assets/Wireframe-Draft)
+![alt text](/public/assets/Wireframe-Draft)
 
 #### Code of Conduct and Conflict Plan
 - We will strive to create an open and welcoming environment where participation and contribution to the project and general community is a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
@@ -90,7 +90,7 @@ No contribution guidelines at this point.
 
 ### Project Organization
  - Kanban board on Trello: https://trello.com/b/5HxdkU7g/goya-app
-
+```
 ├── package-lock.json
 ├── package.json
 ├── public
@@ -112,7 +112,7 @@ No contribution guidelines at this point.
     ├── how-to.ejs
     ├── savedPhrases.ejs
     └── header.ejs
-
+```
 #### Daily Team Workflow
 Day 1: Brainstorm project scope, build organization and repo on Github, declare MVP, designate stretch goals, create basic wireframes, start writing user stories based on MVP, build repo branch structure, deploy on Heroku and complete proof of life check, decide on app name, built About Me page with content, draft ReadMe, start code in app.js, base.css, modules.css, and templates (ejs), created Trello team and board, build database structure, write and agree on code of conduct, conflict and communication plans.
 
