@@ -53,7 +53,7 @@ No contribution guidelines at this point.
 "As a developer, I want to convey my story and that of my team to the user."
 
 #### Wireframes
-![alt text](/public/assets/Wireframe-Draft)
+![alt text](/public/assets/Wireframe-Draft.jpg)
 
 #### Code of Conduct and Conflict Plan
 - We will strive to create an open and welcoming environment where participation and contribution to the project and general community is a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
