@@ -1,11 +1,11 @@
 # Code 301 Final Project: Goya
-Final Project Repo
+### Final Project Repo
 
 ## Team Members 
-Nadya Ilinskaya
-Quang Nguyen
-Sam Gnuschke
-Sarah Fisher 
+* Nadya Ilinskaya
+* Quang Nguyen
+* Sam Gnuschke
+* Sarah Fisher 
 
 ## Version
 1.0.0 
