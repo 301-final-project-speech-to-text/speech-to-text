@@ -1,5 +1,4 @@
 # Code 301 Final Project: Goya
-### Final Project Repo
 
 ## Team Members 
 * Nadya Ilinskaya
