@@ -70,14 +70,6 @@ body {
   font-size: 60px;
 }
 
-.border{
-  display: block;
-  margin: auto;
-  width: 160px;
-  height: 4px;
-  background: midnightblue;
-}
-
 .ps{
   margin-bottom: 40px;
   background-color: #E3BB88;
@@ -113,8 +105,18 @@ body {
   background: #DB9864;
 }
 
+div > p {
+  width: 150px;
+  margin: 10px;
+}
+
 .section:target{
   height: auto;
+}
+
+.orangeSection {
+  height: 320px;
+  background: #DB9864;
 }
 
 .name{
@@ -129,12 +131,18 @@ body {
 li{
   font-size: 12px;
   color: black;
-  margin: 20px;
+  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 
-nav > ul > li > a{
+p > ol > li{
   text-decoration: none;
   color:black;
+}
+
+.personInfo {
+  font-size: 20px;
 }
 
 
