@@ -16,8 +16,10 @@ function checkUser() {
 
 async function validateUserSignUp(event) { 
   event.preventDefault();
+  const usernameToValidate = document.querySelector('#userNameSignup');
   const usernameInput = $('#userNameSignup').val();
   let validate = false;
+  
   await $.ajax({
     method: 'GET',
     url: '/users',
@@ -29,8 +31,7 @@ async function validateUserSignUp(event) {
     }
   })
   if (validate === false) { 
-    $('#userNameSignUp').setCustomValidity('This username is already taken')
-    return false;
+    usernameToValidate.setCustomValidity('This username is already taken');
   } else {
     localStorage.setItem('username', `${usernameInput}`);
     addUser(usernameInput);
@@ -38,10 +39,13 @@ async function validateUserSignUp(event) {
   }
 }
 
+
 async function validateUserLogin(event) { 
   event.preventDefault();
+  const newUser = document.querySelector('#userNameLogin');
   const usernameInput = $('#userNameLogin').val();
   let validate = false;
+
   await $.ajax({
     method: 'GET',
     url: '/users',
@@ -53,7 +57,7 @@ async function validateUserLogin(event) {
     }
   })
   if (validate === false) { 
-    return false;
+    newUser.setCustomValidity('Looks like we haven\'t met yet! Please create your username at the sign-in link below.');
   } else {
     localStorage.setItem('username', `${usernameInput}`);
     $('#user-login').hide();
@@ -219,18 +223,19 @@ $('.delete').click((event) => {
 //
 $('#saved').click((event) => { 
   const username = localStorage.getItem('username');
+  let validate = false;
+
   $.ajax({
     method: 'GET',
     url: '/saved',
     data: {username: username},
-    // success: function(data) { 
-    //   window.location.href = "/saved";
-    // }
     success: (html) => {
       $('section').remove();
-      $('nav').after(html);
+      if (html) {validate = true;}
     }
   })
+  if (validate === true) {$('nav').after(html);}
+  else {('nav').after('You don\'t have any saved phrases right now.')}
 })
 
 //
