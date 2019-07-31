@@ -6,46 +6,38 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/layout.css">
-  <!-- <link rel="stylesheet" href="./styles/modules.css"> -->
+  <link rel="stylesheet" href="./styles/modules.css">
   <link rel="stylesheet" href="./styles/reset.css">
   <title>Speech To Text</title>
 </head>
 <body>
-  <%- include('header.ejs') %>.
+  <%- include('header.ejs') %>
   <div class="content">
-    <div class="team">
+    <div class="team-section">
       <h1>About Us</h1>
-      <div class="pictures">
-        <figure>
-          <img src="./assets/sarah-profile.jpg" id="p1">
-          <figcaption>Sarah Fisher</figcaption>
-        </figure>
-        <figure>
-          <img src="./assets/quangProfilePicture.png" id="p1">
-          <figcaption>Quang Nguyen</figcaption>
-        </figure>
-        <figure>
-          <img src="./assets/sarah-profile.jpg" id="p1">
-          <figcaption>Nadya Ilinskaya</figcaption>
-        </figure>
-        <figure>
-          <img src="./assets/samProfile.jpg" id="p1">
-          <figcaption>Sam Gnuschke</figcaption>
-        </figure>
-      </div>
+      <div class="ps">
+          <a href="#p1"><img src="./assets/sarah-profile.jpg" alt="sarahProfilePicture"></a>
+          <img src="" alt="">
+          <a href="#p2"><img src="./assets/quangProfilePicture.png" alt="quangProfilePicture"></a>
+          <img src="" alt="">
+          <a href="#p3"><img src="./assets/nadyaProfile.jpg" alt="nadyaProfilePicture"></a>
+          <img src="" alt="">
+          <a href="#p4"><img src="./assets/samProfile.jpg" alt="SamProfilePicture"></a>
+          <img src="" alt="">  
+        </div>
     </div>
-    <div id="pro1" class="section">
+    <div id="p1" class="section">
       <span class="name">Sarah Fisher</span>
       <span class="border"></span>
       <p>
         <ol>
           <li>
-            My name is Sarah Fisher. I’m a Software Designer who focuses on technological innovation to build a sustainable future. I am looking for a position where I can continue to learn and which supports my passion for environmental conservation and restoration. My background was originally in Environmental Science and Higher Education Administration. In my last position I developed and launched two degrees in Molecular Biosciences before making the move into programming. I’m known for utilizing servant leadership principles to help others be the best they can be and my passion for volunteering. I’m a life-long learner, community builder, and forest steward. I’d love to hear what makes you passionate about your project!
+            My name is Sarah Fisher. I’m a Software Designer who focuses on technological innovation to build a sustainable future. I am looking for a position where I can continue to learn and which supports my passion for environmental conservation and restoration. My background was originally in Environmental Science and Higher Education Administration. In my last position I developed and launched two degrees in Molecular Biosciences before making the move into programming.
           </li>
         </ol>
       </p>
     </div>
-    <div id="pro2" class="section">
+    <div id="p2" class="section">
       <span class="name">Quang Nguyen</span>
       <span class="border"></span>
       <p>
@@ -57,18 +49,19 @@
         </ol>
       </p>
     </div>
-    <div id="pro3" class="section">
+    <div id="p3" class="section">
       <span class="name">Nadya Ilinskaya</span>
       <span class="border"></span>
       <p>
         <ol>
           <li>
-            My name is Sarah Fisher. I’m a Software Designer who focuses on technological innovation to build a sustainable future. I am looking for a position where I can continue to learn and which supports my passion for environmental conservation and restoration. My background was originally in Environmental Science and Higher Education Administration. In my last position I developed and launched two degrees in Molecular Biosciences before making the move into programming. I’m known for utilizing servant leadership principles to help others be the best they can be and my passion for volunteering. I’m a life-long learner, community builder, and forest steward. I’d love to hear what makes you passionate about your project!
+              Hi my name is Nayda. I’m Software Developer with good technical sophistication and intuition that only comes with experience.
+              I’ve spent last 10 years playing different roles in the tech field, but pursuing the very same idea and passion of mine - bringing quality software to people. Software that makes people lives easier and happier.
           </li>
         </ol>
       </p>
     </div>
-    <div id="pro4" class="section">
+    <div id="p4" class="section">
       <span class="name">Sam Gnuschke</span>
       <span class="border"></span>
       <p>
@@ -80,6 +73,7 @@
       </p>
     </div>
   </div>
+  <%- include('footer.ejs') %>
 
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
