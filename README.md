@@ -18,11 +18,29 @@ The name Goya comes from the Urdu language. It refers to the suspension of disbe
 ## Problem Domain
 Our concept is to break through the language barriers for travelers and those living in a place where they are new to the common tongue. The app allows the user to communicate across any language currently supported by Google's Translate API.
 
+## Deployment
+https://goya-translation.herokuapp.com/
+
+## Instructions to run the app on your computer
+- npm install in terminal
+- open PSQL, run command: CREATE DATABASE goya
+- add schema to your database, run command: psql -d goya -f ./data/schema.sql
+- Google Cloud API key: Follow the instructions in the following link to create your API key
+  - https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-install-nodejs
+- add .env file to your local copy of the app code
+  - include your localhost port: PORT = 3000
+  - the google API: GOOGLE_APPLICATION_CREDENTIALS = /pathfromtheplaceyoustoredyourGoogleAPIJSONfile
+  - the database: (Windows) DATABASE_URL = postgres://user:password@localhost:5432/goya (Mac) DATABASE_URL = postgres://@localhost:5432/goya
+- run node server.js
+- open web browser and go to localhost:3000 to view the homepage
+
+### Contribute
+No contribution guidelines at this point. 
+
 ## Build status
 ### Planning phase
-
 #### User Stories
-"As a traveler, I want to be able to translate what I am saying so that another person can see what I said translated into their language."
+"As a user, I want to be able to translate what I am saying so that another person can see what I said translated into their language."
 "As a user, I want to be able to save past translations so that I can see them later."
 "As a user, I want to be able to play back past translations so I can 'speak' to others in their language."
 "As a developer, I want the user to have a comfortable experience with the application."
@@ -97,7 +115,7 @@ Our concept is to break through the language barriers for travelers and those li
 #### Daily Team Workflow
 Day 1: Brainstorm project scope, build organization and repo on Github, declare MVP, designate stretch goals, create basic wireframes, start writing user stories based on MVP, build repo branch structure, deploy on Heroku and complete proof of life check, decide on app name, built About Me page with content, draft ReadMe, start code in app.js, base.css, modules.css, and templates (ejs), created Trello team and board, build database structure, write and agree on code of conduct, conflict and communication plans.
 
-Day 2: 
+Day 2: Delete functionality, save functionality, created database page, saved phrases displayed, hacked heroku site properly displaying translation, added users, local storage, and requirement for unique user name, coded base of UI, created skeleton page for How to Use App, .
 
 Day 3: 
 
@@ -118,31 +136,10 @@ Google Cloud Translation API: https://cloud.google.com/translate/
 No tests at this time. 
 - Clearly defined API endpoints with sample responses
 
-## Deployment
-https://goya-translation.herokuapp.com/
-
-## How to use?
-### Give examples of use
-
-### Instructions to run the app on your computer
-- npm install in terminal
-- open PSQL, run command: CREATE DATABASE goya
-- add schema to your database, run command: psql -d goya -f ./data/schema.sql
-- Google Cloud API key: Follow the instructions in the following link to create your API key
-  - https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-install-nodejs
-- add .env file to your local copy of the app code
-  - include your localhost port: PORT = 3000
-  - the google API: GOOGLE_APPLICATION_CREDENTIALS = /pathfromtheplaceyoustoredyourGoogleAPIJSONfile
-  - the database: DATABASE_URL = postgres://user:password@localhost:5432/goya
-- run node server.js
-- open web browser and go to localhost:3000 to view the homepage
-
-
-## Contribute
-No contribution guidelines at this point. 
 
 ## Credits
-* Jacob K
+* Jacob Knaack
+* Dan-Huy Le
 * https://meyerweb.com/eric/tools/css/reset/ CSS Reset Tool
 * https://nodejs.org/en/
 
