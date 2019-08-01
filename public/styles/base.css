@@ -1,11 +1,20 @@
-
 body { 
   font-family: 'Montserrat', sans-serif;
 }
 
+h1 { 
+  color: #eee;
+  font-size: 2rem;
+}
+
+button:focus {
+ outline: 0;
+  filter: grayscale(90%);
+}
 
 /* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 /*  */
+
 .dropbtn {
   background-color: rgb(148, 177, 155);
   color: white;
@@ -63,17 +72,16 @@ body {
   text-align: center;
   background-color: #E3BB88;
 }
-.team-desc{
-  height: auto;
-}
-.team-desc:target{
-  height: 0;
-}
 
 .team-section h1 {
   text-transform: uppercase;
   color: black;
   font-size: 60px;
+}
+
+#teamDescrip {
+  text-align: justify;
+  margin: 15px;
 }
 
 .ps{
@@ -94,7 +102,6 @@ body {
   filter: grayscale(100%);
   transition: 0.4s all; 
   border-radius: 100%;
- 
 }
 
 .ps a:hover > img {
@@ -114,7 +121,6 @@ body {
 
 div > p {
   width: 150px;
-  margin: 10px;
 }
 
 .section:target{
@@ -132,7 +138,16 @@ div > p {
   margin-top: 10px;
   text-align: center;
   text-transform: uppercase;
-  font-size: 34px;
+  font-size: 24px;
+}
+
+.teamTitle {
+  display: block;
+  margin-bottom: 10px;
+  /* margin-top: 10px; */
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
 }
 
 li{
@@ -241,6 +256,8 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  width: 100vw;
+
 }
 
 #firstLanguageWindow { 
@@ -273,13 +290,16 @@ footer {
 nav { 
   background: rgb(148, 177, 155);
   padding-right: 5px;
+  width: 100vw;
 }
 
 #saveWindow { 
+  position: relative;
   display: flex;
   background: #B1695A;
   flex-grow: 1;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 5px;
 }
 
@@ -300,13 +320,24 @@ body {
   box-shadow: 0 7px 4px #644749;
 }
 
-.firstTalk::before, .secondTalk::before { 
-  content: "";
-  background: red;
+
+i.fa-microphone { 
   border-radius: 50%;
 }
 
-.save { 
+@keyframes recording { 
+  0% {
+    background: rgba(255,0,0,1);
+  }
+  50% {
+    background:rgba(255,0,0,0);
+  }
+  100% { 
+    background: rgba(255,0,0,1);
+  }
+}
+
+.save, #clear { 
   border-radius: 70px;
   box-shadow: 0 4px 2px #644749;
   height: 70%;
@@ -321,12 +352,6 @@ body {
   background: rgb(117, 138, 122);
 }
 
-#saveWindow { 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #firstLanguages option, #secondFirstLanguages option { 
   background: #eee;
 }
@@ -339,7 +364,22 @@ body {
 #signOut { 
   border-radius: 70px;
   border: none;
+  margin: 10px;
+}
 
+#saveConfirmMessage { 
+  position: absolute;
+  background: #eee;
+  border-radius: 20px 20px 0px 20px;
+  padding: 10px;
+  bottom: 50px;
+  display: none;
+}
+
+
+#user {
+  line-height: 1;
+  margin: 5px 10px 0px 17px
 }
 
 /* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
@@ -347,14 +387,21 @@ body {
 #user-login, #user-signup { 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+
   position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 2;
-  padding: 1rem;
+  /* padding: 1rem; */
   background: #DB9864;
-  display: none;
+  /* display: none; */
+}
+
+#user-login { 
+  z-index: 3;
+
 }
 
 #signUpPage { 
@@ -385,10 +432,6 @@ body {
   width: 45%;
 }
 
-/* #translatedList > li, #originalList > li { 
-  color: #644749;
-} */
-
 #translatedPhrase { 
   display: flex;
   flex-direction: column;
@@ -397,385 +440,10 @@ body {
 
 .delete { 
   flex-grow: 0.5;
-  cursor: pointer;
 }
-.delete:hover{
-  color:red;
-}
+
 .languageCode { 
   color: #B1695A;
   padding-right: 5px;
-=======
-body { 
-  font-family: sans-serif;
 }
 
-
-/* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-/*  */
-.dropbtn {
-  background-color: rgb(148, 177, 155);
-  color: white;
-  padding: 8px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  height: 50%;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: rgb(148, 177, 155);
-}
-
-.dropdown {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 3em;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content span {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd}
-
-.show {display:block;}
-
-
-/* //////////////////////////////////////////////////////////////////////////////ABOUT ME CSS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
-
-.team-section {
-  overflow: hidden;
-  text-align: center;
-  background-color: #E3BB88;
-}
-
-.team-section h1 {
-  text-transform: uppercase;
-  color: black;
-  font-size: 60px;
-}
-
-.ps{
-  background-color: #E3BB88;
-}
-
-.ps a{
-  display: inline-block;
-  width: 40%;
-  height: 40%;
-  overflow: hidden;
-  border-radius: 100%;
-}
-
-.ps a img{
-  width: 140px;
-  height: 140px;
-  filter: grayscale(100%);
-  transition: 0.4s all;  
-}
-
-.ps a:hover > img {
-  filter: none;
-}
-
-.section{
-  width: 100%;
-  margin: auto;
-  font-size: 20px;
-  color: black;
-  text-align: justify;
-  height: 0;
-  overflow: hidden;
-  background: #DB9864;
-}
-
-div > p {
-  width: 150px;
-  margin: 10px;
-}
-
-.section:target{
-  height: auto;
-}
-
-.orangeSection {
-  height: 320px;
-  background: #DB9864;
-}
-
-.name{
-  display: block;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 34px;
-}
-
-li{
-  font-size: 12px;
-  color: black;
-  margin: auto;
-  width: 100%;
-  text-align: center;
-}
-
-p > ol > li{
-  text-decoration: none;
-  color:black;
-}
-
-.personInfo {
-  font-size: 20px;
-}
-
-
- /* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
-
- footer { 
-   background: #644749;
-   /* flex-grow: 1; */
-   height: 50px;
- }
-
- #firstLanguageWindow { 
-   display: flex;
-   background: #E3BB88;
-   flex-grow: 4;
-   padding: 10px;
-   flex-direction: column;
- }
-
- #secondLanguageWindow { 
-   display: flex;
-   background: #DB9864;
-   flex-grow: 4;
-   padding: 10px;
-   flex-direction: column;
- }
-
- .windowHeader { 
-   display: flex;
-   justify-content: space-between;
- }
-
- nav { 
-   background: rgb(148, 177, 155);
-   /* display: flex;
-   flex-grow: 1; */
-   height: 100px;
- }
-
- #saveWindow { 
-   display: flex;
-   background: #B1695A;
-   flex-grow: 0.5;
-   justify-content: center;
- }
-
- body { 
-   display: flex;
-   flex-direction: column;
-   height: 100vh;
-   width: 100vw;
- }
-
- .firstWords, .secondWords { 
-   background: #eee;
-   height: 80%;
-   width: 90%;
-   margin-top: 20px;
-   margin: auto;
-   border-radius: 10px;
-   box-shadow: 0 7px 4px #644749;
- }
-
-
- /* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
-
- #user-login, #user-signup { 
-   display: none;
-   position: fixed;
-   height: 100vh;
-   width: 100vw;
-   z-index: 2;
-   padding: 1rem;
-   background: #DB9864;
- }
-
- #signUpPage { 
-   color: blue;
- }
-/* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
-
-#appName { 
-  font-family: 'Kaushan Script', cursive;
-  font-size: 2em;
-  color: #463233;
-}
-
-footer { 
-  background: #644749;
-  /* flex-grow: 1; */
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-}
-
-#firstLanguageWindow { 
-  display: flex;
-  background: #E3BB88;
-  flex-grow: 8;
-  padding: 10px;
-  flex-direction: column;
-}
-
-#secondLanguageWindow { 
-  display: flex;
-  background: #DB9864;
-  flex-grow: 8;
-  padding: 10px;
-  flex-direction: column;
-}
-
-.firstWords, .secondWords { 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.windowHeader { 
-  display: flex;
-  justify-content: space-between;
-}
-
-nav { 
-  background: rgb(148, 177, 155);
-  padding-right: 5px;
-}
-
-#saveWindow { 
-  display: flex;
-  background: #B1695A;
-  flex-grow: 1;
-  justify-content: center;
-  padding: 5px;
-}
-
-body { 
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-}
-
-.firstWords, .secondWords { 
-  background: #eee;
-  height: 80%;
-  width: 90%;
-  margin-top: 20px;
-  margin: auto;
-  border-radius: 10px;
-  box-shadow: 0 7px 4px #644749;
-}
-
-.firstTalk::before, .secondTalk::before { 
-  content: "";
-  background: red;
-  border-radius: 50%;
-}
-
-.save { 
-  border-radius: 70px;
-  box-shadow: 0 4px 2px #644749;
-  height: 70%;
-  background: rgb(148, 177, 155);
-  border: none;
-  font-size: 1em;
-  padding: 10px;
-  color: #eee;
-}
-
-.save:hover { 
-  background: rgb(117, 138, 122);
-}
-
-#saveWindow { 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#firstLanguages option, #secondFirstLanguages option { 
-  background: #eee;
-}
-
-/* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
-
-#user-login, #user-signup { 
-  display: none;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  z-index: 2;
-  padding: 1rem;
-  background: #DB9864;
-}
-
-#signUpPage { 
-  color: blue;
-}
-
-
-/* ////////////////////////////////// Saved Phrases Table ///////////////////////////////////// */
-
-#savedPhrasesTable { 
-  display: flex;
-  flex-direction: row;
-  flex-grow: 15;
-}
-
-#originalPhrase { 
-  display: flex;
-  flex-direction: column;
-  background: #E3BB88;
-  flex-grow: 1;
-}
-
-#translatedPhrase { 
-  display: flex;
-  flex-direction: column;
-  background: #DB9864;
-  flex-grow: 1;
-}
-
-.languageCode { 
-  color: rgb(148, 177, 155);
-  padding-right: 5px;
-
-}

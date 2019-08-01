@@ -7,23 +7,31 @@
   
   <%- include('header.ejs') %>
 
-  <section type="hidden" id="user-login">
+  <section id="user-login">
+    <%- include('header.ejs') %>
     <h1>
-    Welcome to Goya! Your personal translation app.
+      Welcome to <span class="appName">Goya!</span> Your personal translation app.
     </h1>
     
     <form id="userLogin">
       <input id="userNameLogin" type="text" placeholder="Enter Your Username" required/>
       <button id="login">Login</button>
     </form>
-      <p>Click <span id="signUpPage">here</span> to sign up if you dont have an account</p>
 
+    <p>
+      Click <span id="signUpPage">here</span> to sign up if you dont have an account
+    </p>
+
+    <footer>
+      <span>&copy; Code Fellows Goya team</span>
+    </footer>   
   </section>
 
   <section id="user-signup">
 
+    <%- include('header.ejs') %>
     <h1>
-    Welcome to Goya! Your personal translation app.
+    Welcome to <span class="appName">Goya!</span> Your personal translation app.
     </h1>
     
     <form id="userSignup">
@@ -31,6 +39,9 @@
       <button id="signUp">Sign Up</button>
     </form>
 
+    <footer>
+      <span>&copy; Code Fellows Goya team</span>
+    </footer> 
 
   </section>
 
@@ -53,7 +64,11 @@
   </section>
 
   <section id="saveWindow">
-      <button class="save">Save Phrase</button>
+      <div>
+        <p id="saveConfirmMessage">Saved</p>
+        <button class="save">Save Phrase</button>
+      </div>
+      <button id='clear'>Clear</button>
   </section>
   
   <%- include('footer.ejs') %>
