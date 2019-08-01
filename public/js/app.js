@@ -157,6 +157,7 @@ recognition.onresult = function(event) {
     success: function(data) {
       savedTranscript.translatedTranscript = data[0];
       talk(data[0]);
+      $('i.firstTalk').css('animation','');
       $('.firstWords').text(transcript);
       $('.secondWords').text(data);
     }
@@ -176,6 +177,7 @@ recognition2.onresult = function(event) {
     success: function(data) {
       savedTranscript.translatedTranscript = data[0];
       talk(data[0]);
+      $('i.secondTalk').css('animation','');
       $('.firstWords').text(data);
       $('.secondWords').text(transcript);
     }
@@ -189,6 +191,7 @@ $('.firstTalk').click(() => {
   savedTranscript.translatedLanguage = selectedLanguages[1];
   recognition.lang = firstSelectedLanguageCode;
   recognition.start();
+  $('i.firstTalk').css('animation','recording 2s infinite');
 });
 
 //
@@ -198,27 +201,41 @@ $('.secondTalk').click(() => {
   savedTranscript.translatedLanguage = selectedLanguages[0];
   recognition2.lang = secondSelectedLanguageCode;
   recognition2.start();
+  $('i.secondTalk').css('animation','recording 2s infinite');
 });
 
 //
 $('.save').click(() => {
   const currentUser = localStorage.getItem('username');
-  $.ajax({
-    method: 'POST',
-    url: '/transcript',
-    contentType: 'application/x-www-form-urlencoded',
-    data: {
-      originalTranscript: savedTranscript.originalTranscript,
-      translatedTranscript: savedTranscript.translatedTranscript,
-      originalLanguage: savedTranscript.originalLanguage,
-      translatedLanguage: savedTranscript.translatedLanguage,
-      username: currentUser
-    },
-    success: function(data) {
-      console.log('save to SQL successful');
-    }
-  });
+  console.log(savedTranscript.originalTranscript);
+  if (savedTranscript.originalTranscript !== '' || savedTranscript.translatedTranscript !== '') {
+    $('#saveConfirmMessage').fadeIn(500);
+    $('#saveConfirmMessage').fadeOut(500);
+    $.ajax({
+      method: 'POST',
+      url: '/transcript',
+      contentType: 'application/x-www-form-urlencoded',
+      data: {
+        originalTranscript: savedTranscript.originalTranscript,
+        translatedTranscript: savedTranscript.translatedTranscript,
+        originalLanguage: savedTranscript.originalLanguage,
+        translatedLanguage: savedTranscript.translatedLanguage,
+        username: currentUser
+      },
+      success: function(data) {
+        console.log('save to SQL successful');
+      }
+    });
+  } 
+  clearPhrase();
 });
+
+$('#clear').click(clearPhrase)
+
+function clearPhrase() { 
+  $('.firstWords').text('');
+  $('.secondWords').text('');
+}
 
 //
 function talk(transcript) {
