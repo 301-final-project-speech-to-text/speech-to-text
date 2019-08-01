@@ -5,8 +5,10 @@
 
 <body>
   
-  <section id="user-login">
-    <h2>
+  <%- include('header.ejs') %>
+
+  <section type="hidden" id="user-login">
+    <h1>
     Welcome to Goya! Your personal translation app.
     </h1>
     
@@ -15,10 +17,12 @@
       <button id="login">Login</button>
     </form>
       <p>Click <span id="signUpPage">here</span> to sign up if you dont have an account</p>
+
   </section>
 
   <section id="user-signup">
-    <h2>
+
+    <h1>
     Welcome to Goya! Your personal translation app.
     </h1>
     
@@ -26,9 +30,9 @@
       <input id="userNameSignup" type="text" placeholder="Enter A Unique Username" required/>
       <button id="signUp">Sign Up</button>
     </form>
-  </section>
 
-  <%- include('header.ejs') %>
+
+  </section>
 
   <section id="firstLanguageWindow">
     <div class="windowHeader">
