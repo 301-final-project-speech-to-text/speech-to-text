@@ -66,43 +66,38 @@ h1 {
 .team-section {
   overflow: hidden;
   text-align: center;
-  padding: 60px;
-
+  background-color: #E3BB88;
 }
 
 .team-section h1 {
   text-transform: uppercase;
-  margin-bottom: 10px;
-  color: white;
-  font-size: 30px;
+  color: black;
+  font-size: 60px;
 }
 
-.border{
-  display: block;
-  margin: auto;
-  width: 160px;
-  height: 4px;
-  background: midnightblue;
+#teamDescrip {
+  text-align: justify;
+  margin: 15px;
 }
 
 .ps{
-  margin-bottom: 40px;
+  background-color: #E3BB88;
+  z-index: -12;
 }
 
 .ps a{
   display: inline-block;
-  margin: 0 15px;
-  width: 35%;
-  height: 35%;
-  overflow: hidden;
-  border-radius: 30%;
+  width: 40%;
+  height: 40%;
+  margin: 5px;
 }
 
 .ps a img{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   filter: grayscale(100%);
-  transition: 0.4s all;  
+  transition: 0.4s all; 
+  border-radius: 100%;
 }
 
 .ps a:hover > img {
@@ -110,46 +105,142 @@ h1 {
 }
 
 .section{
-  width: 300px;
+  width: 100%;
   margin: auto;
   font-size: 20px;
-  color: white;
+  color: black;
   text-align: justify;
   height: 0;
   overflow: hidden;
-  margin-bottom: 10px;
+  background: #DB9864;
+}
+
+div > p {
+  width: 150px;
 }
 
 .section:target{
   height: auto;
 }
 
+.orangeSection {
+  height: 320px;
+  background: #DB9864;
+}
+
 .name{
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.teamTitle {
   display: block;
   margin-bottom: 10px;
   /* margin-top: 10px; */
   text-align: center;
   text-transform: uppercase;
-  font-size: 44px;
+  font-size: 24px;
 }
 
 li{
-  font-size: 18px;
-  color: white;
-  margin: 20px;
+  font-size: 12px;
+  color: black;
+  margin: auto;
+  width: 100%;
+  /* text-align: center; */
+  text-align: justify;
 }
 
-nav > ul > li > a{
+p > ol > li{
   text-decoration: none;
-  color:white;
+  color:black;
 }
+
+.personInfo {
+  font-size: 20px;
+}
+
+#myDropdown {
+  z-index: 10000;
+}
+
+.bio {
+  text-align: justify;
+  margin: 15px;
+}
+
+
+ /* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
+
+ footer { 
+   background: #644749;
+   /* flex-grow: 1; */
+   height: 50px;
+ }
+
+ #firstLanguageWindow { 
+   display: flex;
+   background: #E3BB88;
+   flex-grow: 4;
+   padding: 10px;
+   flex-direction: column;
+ }
+
+ #secondLanguageWindow { 
+   display: flex;
+   background: #DB9864;
+   flex-grow: 4;
+   padding: 10px;
+   flex-direction: column;
+ }
+
+ .windowHeader { 
+   display: flex;
+   justify-content: space-between;
+ }
+
+ nav { 
+   background: rgb(148, 177, 155);
+   /* display: flex;
+   flex-grow: 1; */
+   /* height: 100px; */
+ }
+
+ #saveWindow { 
+   display: flex;
+   background: #B1695A;
+   flex-grow: 0.5;
+   justify-content: center;
+ }
+
+ body { 
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   width: 100vw;
+ }
+
+ .firstWords, .secondWords { 
+   background: #eee;
+   height: 80%;
+   width: 90%;
+   margin-top: 20px;
+   margin: auto;
+   border-radius: 10px;
+   box-shadow: 0 7px 4px #644749;
+ }
+
 
 
 /* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
 
-.appName { 
+#appName { 
   font-family: 'Kaushan Script', cursive;
-  font-size: 3rem;
+  font-size: 2em;
   color: #463233;
 }
 
@@ -162,6 +253,7 @@ footer {
   align-items: center;
   padding: 15px;
   width: 100vw;
+
 }
 
 #firstLanguageWindow { 
@@ -224,6 +316,7 @@ body {
   box-shadow: 0 7px 4px #644749;
 }
 
+
 i.fa-microphone { 
   border-radius: 50%;
 }
@@ -277,6 +370,13 @@ i.fa-microphone {
   bottom: 50px;
   display: none;
 }
+
+
+#user {
+  line-height: 1;
+  margin: 5px 10px 0px 17px
+}
+
 /* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
 
 #user-login, #user-signup { 
@@ -284,6 +384,7 @@ i.fa-microphone {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -295,6 +396,7 @@ i.fa-microphone {
 
 #user-login { 
   z-index: 3;
+
 }
 
 #signUpPage { 
@@ -339,3 +441,4 @@ i.fa-microphone {
   color: #B1695A;
   padding-right: 5px;
 }
+

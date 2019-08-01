@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('head.ejs') %>
+
+<body>
+    <%- include('header.ejs') %>
+<section id="user-login">
+    <h2>
+    Welcome to Goya! Your personal translation app.
+    </h1>
+    
+    <form id="userLogin">
+      <input id="userNameLogin" type="text" placeholder="Enter Your Username" required/>
+      <button id="login">Login</button>
+    </form>
+      <p>Click <span id="signUpPage">here</span> to sign up if you dont have an account</p>
+  </section>
+
+  <section id="user-signup">
+    <h2>
+    Welcome to Goya! Your personal translation app.
+    </h1>
+    
+    <form id="userSignup">
+      <input id="userNameSignup" type="text" placeholder="Enter A Unique Username" required/>
+      <button id="signUp">Sign Up</button>
+    </form>
+  </section>
+
+ 
+  
+  <%- include('footer.ejs') %>
+</body>
+</html>

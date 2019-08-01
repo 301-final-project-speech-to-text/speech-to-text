@@ -1,76 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./styles/base.css">
-  <link rel="stylesheet" href="./styles/layout.css">
-  <link rel="stylesheet" href="./styles/modules.css">
-  <link rel="stylesheet" href="./styles/reset.css">
-  <title>Speech To Text</title>
-</head>
+    <%- include('head.ejs') %>
 <body>
   <%- include('header.ejs') %>
   <div class="content">
     <div class="team-section">
-      <h1>About Us</h1>
-      <div class="ps">
+      <div id="hideTeam" class="ps">
           <a href="#p1"><img src="./assets/sarah-profile.jpg" alt="sarahProfilePicture"></a>
-          <img src="" alt="">
           <a href="#p2"><img src="./assets/quangProfilePicture.png" alt="quangProfilePicture"></a>
-          <img src="" alt="">
           <a href="#p3"><img src="./assets/nadyaProfile.jpg" alt="nadyaProfilePicture"></a>
-          <img src="" alt="">
           <a href="#p4"><img src="./assets/samProfile.jpg" alt="SamProfilePicture"></a>
-          <img src="" alt="">  
         </div>
     </div>
-    <div id="p1" class="section">
-      <span class="name">Sarah Fisher</span>
-      <span class="border"></span>
-      <p>
-        <ol>
-          <li>
-            My name is Sarah Fisher. I’m a Software Designer who focuses on technological innovation to build a sustainable future. I am looking for a position where I can continue to learn and which supports my passion for environmental conservation and restoration. My background was originally in Environmental Science and Higher Education Administration. In my last position I developed and launched two degrees in Molecular Biosciences before making the move into programming.
-          </li>
-        </ol>
-      </p>
-    </div>
-    <div id="p2" class="section">
-      <span class="name">Quang Nguyen</span>
-      <span class="border"></span>
-      <p>
-        <ol>
-          <li>I am from Vietnam.</li>
-          <li>I graduated from UW with mechanical engineering degree.</li>
-          <li>I like software development because I can contribute in creating product that other people use. Plus it is just fun.</li>
-          <li>I want to learn Javascript because it is a widely adopted language for the web and it is very versatile. </li>
-        </ol>
-      </p>
-    </div>
-    <div id="p3" class="section">
-      <span class="name">Nadya Ilinskaya</span>
-      <span class="border"></span>
-      <p>
-        <ol>
-          <li>
-              Hi my name is Nayda. I’m Software Developer with good technical sophistication and intuition that only comes with experience.
-              I’ve spent last 10 years playing different roles in the tech field, but pursuing the very same idea and passion of mine - bringing quality software to people. Software that makes people lives easier and happier.
-          </li>
-        </ol>
-      </p>
-    </div>
-    <div id="p4" class="section">
-      <span class="name">Sam Gnuschke</span>
-      <span class="border"></span>
-      <p>
-        <ol>
-          <li>From Texas</li>
-          <li>I got my history degree with the goal of becoming a teacher</li>
-          <li>Learning HTML, CSS, and JavaScript</li>
-        </ol>
-      </p>
+    <div class="orangeSection">
+      <div id="team-desc">
+        <div class="teamTitle"><br>Goya Team</div>
+        <div id="teamDescrip">
+          Our team is comprised of Code Fellows 301 students. We wanted to stretch ourselves with our final project so we decided to try our hands at building a translation app.
+        </div>
+      </div>
+
+      <div id="p1" class="section">
+        <span class="name">Sarah Fisher</span>
+        <span class="border"></span>
+        <p>
+          <ol>
+            <li class="personInfo">
+              <div class="bio">
+                  I focus on technological innovation to build a sustainable future through environmental conservation.
+                  Background in Environmental Science and Higher Education Administration.
+                  In my spare time I volunteer as a Forest Steward and as Director of Recruitment and Horse Master for the Nightmare at Beaver Lake.
+              </div>
+            </li>
+          </ol>
+        </p>
+      </div>
+      <div id="p2" class="section">
+        <span class="name">Quang Nguyen</span>
+        <span class="border"></span>
+        <p>
+          <ol>
+            <div class="bio">I am from Vietnam.
+             I graduated from UW with mechanical engineering degree.
+             I like software development because I can contribute in creating product that other people use. Plus it is just fun.
+             I want to learn Javascript because it is a widely adopted language for the web and it is very versatile. </div>
+          </ol>
+        </p>
+      </div>
+      <div id="p3" class="section">
+        <span class="name">Nadya Ilinskaya</span>
+        <span class="border"></span>
+        <p>
+          <ol>
+            <div class="bio">
+                Hi my name is Nayda. I’m Software Developer with good technical sophistication and intuition that only comes with experience.
+                I’ve spent last 10 years playing different roles in the tech field, but pursuing the very same idea and passion of mine - bringing quality software to people. Software that makes people lives easier and happier.
+            </div>
+          </ol>
+        </p>
+      </div>
+      <div id="p4" class="section">
+        <span class="name">Sam Gnuschke</span>
+        <span class="border"></span>
+        <p>
+          <ol>
+            <div class="bio">I am from Texas<br>
+            I got my history degree with the goal of becoming a teacher<br>
+            Learning HTML, CSS, and JavaScript</div>
+          </ol>
+        </p>
+      </div>
     </div>
   </div>
   <%- include('footer.ejs') %>
