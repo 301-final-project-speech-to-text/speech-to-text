@@ -7,6 +7,10 @@ h1 {
   font-size: 2rem;
 }
 
+button:focus {
+ outline: 0;
+  filter: grayscale(90%);
+}
 
 /* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 /*  */
@@ -360,6 +364,7 @@ i.fa-microphone {
 #signOut { 
   border-radius: 70px;
   border: none;
+  margin: 10px;
 }
 
 #saveConfirmMessage { 
