@@ -4,35 +4,90 @@
 // Alert user to submit their name. Store their name in local storage. Store in name: 'value'.
 
 //Local storage global variables
-var userName='';
-var currentUser = '';
+checkUser();
+$('#user').text(showUsername());
+loadHTMLSavePage();
+//User login and interaction with local storage
 
-var currentUser = localStorage.Current;
-console.log(currentUser, 'Do we have a currentUser?');
-
-function User(name) {
-  this.name = name;
+function checkUser() { 
+  if (!localStorage.username) { 
+    $('#user-login').show();
+  }
 }
 
-//User login and interaction with local storage
-var form = document.getElementById('userLogin');
-
-var addUser = function(event) {
+async function validateUserSignUp(event) { 
   event.preventDefault();
-  var userEntry = event.target.userName.value;
-  if (localStorage.userEntry) {
-    userName = localStorage.userEntry;
-    currentUser = userName;
+  const usernameToValidate = document.querySelector('#userNameSignup');
+  const usernameInput = $('#userNameSignup').val();
+  let validate = false;
+  
+  await $.ajax({
+    method: 'GET',
+    url: '/users',
+    success: function(data) { 
+      console.log(data);
+      if (!data.includes(usernameInput)) {
+        validate = true;
+      }
+    }
+  })
+  if (validate === false) { 
+    usernameToValidate.setCustomValidity('This username is already taken');
   } else {
-    userName = event.target.userName.value;
-    currentUser = userName;
-    localStorage.setItem('Current', currentUser);
-    localStorage.setItem(`'${userName}'`, userName);
+    localStorage.setItem('username', `${usernameInput}`);
+    addUser(usernameInput);
+    $('#user').text(showUsername());
+    $('#user-signup').hide();
   }
-  //insert code to hide the login section
-};
+}
 
-form.addEventListener('submit', addUser);
+
+async function validateUserLogin(event) { 
+  event.preventDefault();
+  const newUser = document.querySelector('#userNameLogin');
+  const usernameInput = $('#userNameLogin').val();
+  let validate = false;
+
+  await $.ajax({
+    method: 'GET',
+    url: '/users',
+    success: function(data) { 
+      console.log(data);
+      if (data.includes(usernameInput)) {
+        validate = true;
+      }
+    }
+  })
+  if (validate === false) { 
+    newUser.setCustomValidity('Looks like we haven\'t met yet! Please create your username at the sign-in link below.');
+  } else {
+    localStorage.setItem('username', `${usernameInput}`);
+    $('#user').text(showUsername());
+    $('#user-login').hide();
+  }
+}
+
+function addUser(username) { 
+  $.ajax({
+    method: 'POST',
+    url: '/users',
+    contentType: 'application/x-www-form-urlencoded',
+    data: {username: username}
+  })
+}
+
+function getSignUpPage() { 
+  $('#user-login').hide();
+  $('#user-signup').show();
+}
+
+function showUsername() { 
+  return localStorage.getItem('username');
+}
+
+$('#userLogin').on('submit', validateUserLogin);
+$('#userSignup').on('submit', validateUserSignUp);
+$('#signUpPage').click(getSignUpPage);
 
 /* #endregion Local Storage */
 
@@ -141,6 +196,7 @@ $('.secondTalk').click(() => {
 
 //
 $('.save').click(() => {
+  const currentUser = localStorage.getItem('username');
   $.ajax({
     method: 'POST',
     url: '/transcript',
@@ -149,20 +205,12 @@ $('.save').click(() => {
       originalTranscript: savedTranscript.originalTranscript,
       translatedTranscript: savedTranscript.translatedTranscript,
       originalLanguage: savedTranscript.originalLanguage,
-      translatedLanguage: savedTranscript.translatedLanguage
+      translatedLanguage: savedTranscript.translatedLanguage,
+      username: currentUser
     },
     success: function(data) {
       console.log('save to SQL successful');
     }
-  });
-});
-
-//
-$('.delete').click((event) => {
-  const id = $(event.target).data('id');
-  $.ajax({
-    method: 'DELETE',
-    url: `/saved/${id}`
   });
 });
 
@@ -199,6 +247,10 @@ function populateLanguageDropDownMenu() {
   });
 }
 
+function showDropdown() {
+  document.getElementById('myDropdown').classList.toggle('show');
+}
+
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -211,4 +263,36 @@ window.onclick = function(event) {
       }
     }
   }
-};
+}
+
+async function loadHTMLSavePage() { 
+  console.log(window.location.pathname.slice(-5));
+  if (window.location.pathname.slice(-5) === 'saved') {
+    const username = localStorage.getItem('username');
+    let validate = false;
+  
+    await $.ajax({
+      method: 'POST',
+      url: '/saved',
+      contentType: 'application/x-www-form-urlencoded',
+      data: {username: username},
+      success: (html) => {
+        $('nav').after(html);
+        // if () {$('nav').after('You dont have any saved phrases')}
+      }
+    })
+  }
+}
+
+$('#signOut').click((event) => {
+  localStorage.clear();
+  window.location.replace('/');
+})
+
+function deleteTrans(id) {
+  $.ajax({
+    method: 'DELETE',
+    url: `/saved/${id}`
+  });
+  $(`.delete[data-id=${id}]`).parent().remove();
+}

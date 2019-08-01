@@ -1,5 +1,10 @@
 # Code 301 Final Project: Goya
-Final Project Repo
+
+## Team Members 
+* Nadya Ilinskaya
+* Quang Nguyen
+* Sam Gnuschke
+* Sarah Fisher 
 
 ## Version
 1.0.0 
@@ -12,23 +17,42 @@ The name Goya comes from the Urdu language. It refers to the suspension of disbe
 ## Problem Domain
 Our concept is to break through the language barriers for travelers and those living in a place where they are new to the common tongue. The app allows the user to communicate across any language currently supported by Google's Translate API.
 
+## Deployment
+https://goya-translation.herokuapp.com/
+
+## Instructions to run the app on your computer
+- npm install in terminal
+- open PSQL, run command: CREATE DATABASE goya;
+- add schema to your database, run command: psql -d goya -f ./data/schema.sql
+- Google Cloud API key: Follow the instructions in the following link to create your API key
+  - https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-install-nodejs
+- add .env file to your local copy of the app code
+  - include your localhost port: PORT = 3000
+  - the google API: GOOGLE_APPLICATION_CREDENTIALS = /pathfromtheplaceyoustoredyourGoogleAPIJSONfile
+  - the database: (Windows) DATABASE_URL = postgres://user:password@localhost:5432/goya (Mac) DATABASE_URL = postgres://@localhost:5432/goya
+- Enable Cloud API
+- run node server.js
+- open web browser and go to localhost:3000 to view the homepage
+
+### Contribute
+No contribution guidelines at this point. 
+
 ## Build status
 ### Planning phase
-
 #### User Stories
-"As a traveler, I want to be able to translate what I am saying so that another person can see what I said translated into their language."
+"As a user, I want to be able to translate what I am saying so that another person can see what I said translated into their language."
 "As a user, I want to be able to save past translations so that I can see them later."
 "As a user, I want to be able to play back past translations so I can 'speak' to others in their language."
 "As a developer, I want the user to have a comfortable experience with the application."
 "As a developer, I want the application to be mobile first yet capable of being used from a computer that has a microphone."
 "As a developer, I want to save the user information so that individuals can have their own saved translations."
 "As a user, I want to be able to access the 'How to use' information in multiple languages."
+"As a user, I want to see my username displayed in the app pages while I am logged in"
 "As a developer, I want useful and descriptive error functions throughout the code actions to assist with debugging and communicating with the user."
 "As a developer, I want to convey my story and that of my team to the user."
-"As a user, I want to see my username displayed in the app pages while I am logged in"
 
 #### Wireframes
-![alt text](/assets/Wireframe-Draft)
+![alt text](/public/assets/Wireframe-Draft.jpg)
 
 #### Code of Conduct and Conflict Plan
 - We will strive to create an open and welcoming environment where participation and contribution to the project and general community is a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
@@ -65,7 +89,7 @@ Our concept is to break through the language barriers for travelers and those li
 
 ### Project Organization
  - Kanban board on Trello: https://trello.com/b/5HxdkU7g/goya-app
-
+```
 ├── package-lock.json
 ├── package.json
 ├── public
@@ -87,11 +111,11 @@ Our concept is to break through the language barriers for travelers and those li
     ├── how-to.ejs
     ├── savedPhrases.ejs
     └── header.ejs
-
+```
 #### Daily Team Workflow
 Day 1: Brainstorm project scope, build organization and repo on Github, declare MVP, designate stretch goals, create basic wireframes, start writing user stories based on MVP, build repo branch structure, deploy on Heroku and complete proof of life check, decide on app name, built About Me page with content, draft ReadMe, start code in app.js, base.css, modules.css, and templates (ejs), created Trello team and board, build database structure, write and agree on code of conduct, conflict and communication plans.
 
-Day 2: 
+Day 2: Delete functionality, save functionality, created database page, saved phrases displayed, hacked heroku site properly displaying translation, added users, local storage, and requirement for unique user name, coded base of UI, created skeleton page for How to Use App, .
 
 Day 3: 
 
@@ -112,30 +136,10 @@ Google Cloud Translation API: https://cloud.google.com/translate/
 No tests at this time. 
 - Clearly defined API endpoints with sample responses
 
-## Deployment
-https://goya-translation.herokuapp.com/
-
-## How to use?
-### Give examples of use
-
-### Instructions to run the app on your computer
-- npm init -y
-- npm install
-- Google Cloud API key: Follow the instructions in the following link to create your API key
-  - https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-install-nodejs
-- Add .env file to your local copy of the app code
-  - Include your local host port, the GOOGLE_APPLICATION_CREDENTIALS, and DATABASE_URL
-
-
-## Contribute
-No contribution guidelines at this point. 
 
 ## Credits
-Nadya Ilinskaya
-Quang Nguyen
-Sam Gnuschke
-Sarah Fisher 
-
+* Jacob Knaack
+* Dan-Huy Le
 * https://meyerweb.com/eric/tools/css/reset/ CSS Reset Tool
 * https://nodejs.org/en/
 

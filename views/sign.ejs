@@ -4,11 +4,9 @@
 <%- include('head.ejs') %>
 
 <body>
-  
-  <%- include('header.ejs') %>
-
-  <section type="hidden" id="user-login">
-    <h1>
+    <%- include('header.ejs') %>
+<section id="user-login">
+    <h2>
     Welcome to Goya! Your personal translation app.
     </h1>
     
@@ -17,12 +15,10 @@
       <button id="login">Login</button>
     </form>
       <p>Click <span id="signUpPage">here</span> to sign up if you dont have an account</p>
-
   </section>
 
   <section id="user-signup">
-
-    <h1>
+    <h2>
     Welcome to Goya! Your personal translation app.
     </h1>
     
@@ -30,31 +26,9 @@
       <input id="userNameSignup" type="text" placeholder="Enter A Unique Username" required/>
       <button id="signUp">Sign Up</button>
     </form>
-
-
   </section>
 
-  <section id="firstLanguageWindow">
-    <div class="windowHeader">
-      <select name="firstLanguages" id="firstLanguages">
-      </select>
-      <i class="firstTalk fas fa-microphone fa-2x"></i>
-    </div>
-      <div class="firstWords"></div>
-  </section>
-
-  <section id="secondLanguageWindow">
-    <div class="windowHeader">
-      <select name="secondLanguages" id="secondLanguages">
-        </select>
-      <i class="secondTalk fas fa-microphone fa-2x"></i>
-    </div>
-    <div class="secondWords"></div>
-  </section>
-
-  <section id="saveWindow">
-      <button class="save">Save Phrase</button>
-  </section>
+ 
   
   <%- include('footer.ejs') %>
 </body>
