@@ -177,74 +177,11 @@ p > ol > li{
   margin: 15px;
 }
 
-
- /* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
-
- footer { 
-   background: #644749;
-   /* flex-grow: 1; */
-   height: 50px;
- }
-
- #firstLanguageWindow { 
-   display: flex;
-   background: #E3BB88;
-   flex-grow: 4;
-   padding: 10px;
-   flex-direction: column;
- }
-
- #secondLanguageWindow { 
-   display: flex;
-   background: #DB9864;
-   flex-grow: 4;
-   padding: 10px;
-   flex-direction: column;
- }
-
- .windowHeader { 
-   display: flex;
-   justify-content: space-between;
- }
-
- nav { 
-   background: rgb(148, 177, 155);
-   /* display: flex;
-   flex-grow: 1; */
-   /* height: 100px; */
- }
-
- #saveWindow { 
-   display: flex;
-   background: #B1695A;
-   flex-grow: 0.5;
-   justify-content: center;
- }
-
- body { 
-   display: flex;
-   flex-direction: column;
-   height: 100vh;
-   width: 100vw;
- }
-
- .firstWords, .secondWords { 
-   background: #eee;
-   height: 80%;
-   width: 90%;
-   margin-top: 20px;
-   margin: auto;
-   border-radius: 10px;
-   box-shadow: 0 7px 4px #644749;
- }
-
-
-
 /* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
 
 #appName { 
   font-family: 'Kaushan Script', cursive;
-  font-size: 2em;
+  font-size: 2.5rem;
   color: #463233;
 }
 
@@ -255,9 +192,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 15px 0px;
   width: 100vw;
-
 }
 
 #firstLanguageWindow { 
@@ -289,7 +225,6 @@ footer {
 
 nav { 
   background: rgb(148, 177, 155);
-  padding-right: 5px;
   width: 100vw;
 }
 
@@ -379,7 +314,7 @@ i.fa-microphone {
 
 #user {
   line-height: 1;
-  margin: 5px 10px 0px 17px
+  margin: 5px 10px 0px 17px;
 }
 
 /* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
@@ -389,14 +324,16 @@ i.fa-microphone {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 2;
-  /* padding: 1rem; */
   background: #DB9864;
-  /* display: none; */
+  text-align: center;
+}
+
+h1 {
+  margin: 0px 5px;
 }
 
 #user-login { 
@@ -406,6 +343,12 @@ i.fa-microphone {
 
 #signUpPage { 
   color: blue;
+}
+
+.headerLogin { 
+  display: flex;
+  justify-content: center;
+  padding: 15px 0px;
 }
 
 
