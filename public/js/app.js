@@ -296,3 +296,7 @@ function deleteTrans(id) {
   });
   $(`.delete[data-id=${id}]`).parent().remove();
 }
+
+$('#hideTeam').click(function(){
+  $('#team-desc').hide(1);
+});
