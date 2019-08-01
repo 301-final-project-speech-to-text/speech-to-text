@@ -2,6 +2,11 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+h1 { 
+  color: #eee;
+  font-size: 2rem;
+}
+
 
 /* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 /*  */
@@ -141,9 +146,9 @@ nav > ul > li > a{
 
 /* //////////////////////////////////////// Home Page ////////////////////////////////////////////////// */
 
-#appName { 
+.appName { 
   font-family: 'Kaushan Script', cursive;
-  font-size: 2em;
+  font-size: 3rem;
   color: #463233;
 }
 
@@ -155,6 +160,7 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  width: 100vw;
 }
 
 #firstLanguageWindow { 
@@ -187,6 +193,7 @@ footer {
 nav { 
   background: rgb(148, 177, 155);
   padding-right: 5px;
+  width: 100vw;
 }
 
 #saveWindow { 
@@ -261,14 +268,19 @@ body {
 #user-login, #user-signup { 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 2;
-  padding: 1rem;
+  /* padding: 1rem; */
   background: #DB9864;
-  display: none;
+  /* display: none; */
+}
+
+#user-login { 
+  z-index: 3;
 }
 
 #signUpPage { 

@@ -12,6 +12,10 @@ loadHTMLSavePage();
 function checkUser() { 
   if (!localStorage.username) { 
     $('#user-login').show();
+    $('user-signup').hide();
+  } else { 
+    $('#user-login').hide();
+    $('#user-signup').hide();
   }
 }
 
@@ -37,6 +41,7 @@ async function validateUserSignUp(event) {
     localStorage.setItem('username', `${usernameInput}`);
     addUser(usernameInput);
     $('#user').text(showUsername());
+    $('#user-login').hide();
     $('#user-signup').hide();
   }
 }
@@ -64,6 +69,7 @@ async function validateUserLogin(event) {
     localStorage.setItem('username', `${usernameInput}`);
     $('#user').text(showUsername());
     $('#user-login').hide();
+    $('#user-signup').hide();
   }
 }
 
