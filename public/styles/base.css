@@ -339,7 +339,12 @@ body {
 #signOut { 
   border-radius: 70px;
   border: none;
+  margin: 10px;
+}
 
+#user {
+  line-height: 1;
+  margin: 5px 10px 0px 17px
 }
 
 /* ////////////////////////////////////////////////////User Login Page //////////////////////////////////////////////////// */
