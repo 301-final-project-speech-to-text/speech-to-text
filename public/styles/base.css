@@ -1,11 +1,16 @@
-
 body { 
   font-family: 'Montserrat', sans-serif;
+}
+
+h1 { 
+  color: #eee;
+  font-size: 2rem;
 }
 
 
 /* //////////////////////////////////////////////////////////////////////////// DROPDOWN MENU \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 /*  */
+
 .dropbtn {
   background-color: rgb(148, 177, 155);
   color: white;
@@ -93,7 +98,6 @@ body {
   filter: grayscale(100%);
   transition: 0.4s all; 
   border-radius: 100%;
- 
 }
 
 .ps a:hover > img {
@@ -113,7 +117,6 @@ body {
 
 div > p {
   width: 150px;
-  /* margin: 10px; */
 }
 
 .section:target{
@@ -249,6 +252,8 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 15px;
+  width: 100vw;
+
 }
 
 #firstLanguageWindow { 
@@ -281,13 +286,16 @@ footer {
 nav { 
   background: rgb(148, 177, 155);
   padding-right: 5px;
+  width: 100vw;
 }
 
 #saveWindow { 
+  position: relative;
   display: flex;
   background: #B1695A;
   flex-grow: 1;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 5px;
 }
 
@@ -308,13 +316,24 @@ body {
   box-shadow: 0 7px 4px #644749;
 }
 
-.firstTalk::before, .secondTalk::before { 
-  content: "";
-  background: red;
+
+i.fa-microphone { 
   border-radius: 50%;
 }
 
-.save { 
+@keyframes recording { 
+  0% {
+    background: rgba(255,0,0,1);
+  }
+  50% {
+    background:rgba(255,0,0,0);
+  }
+  100% { 
+    background: rgba(255,0,0,1);
+  }
+}
+
+.save, #clear { 
   border-radius: 70px;
   box-shadow: 0 4px 2px #644749;
   height: 70%;
@@ -329,12 +348,6 @@ body {
   background: rgb(117, 138, 122);
 }
 
-#saveWindow { 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #firstLanguages option, #secondFirstLanguages option { 
   background: #eee;
 }
@@ -347,8 +360,17 @@ body {
 #signOut { 
   border-radius: 70px;
   border: none;
-  margin: 10px;
 }
+
+#saveConfirmMessage { 
+  position: absolute;
+  background: #eee;
+  border-radius: 20px 20px 0px 20px;
+  padding: 10px;
+  bottom: 50px;
+  display: none;
+}
+
 
 #user {
   line-height: 1;
@@ -360,14 +382,21 @@ body {
 #user-login, #user-signup { 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+
   position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 2;
-  padding: 1rem;
+  /* padding: 1rem; */
   background: #DB9864;
-  display: none;
+  /* display: none; */
+}
+
+#user-login { 
+  z-index: 3;
+
 }
 
 #signUpPage { 
@@ -398,10 +427,6 @@ body {
   width: 45%;
 }
 
-/* #translatedList > li, #originalList > li { 
-  color: #644749;
-} */
-
 #translatedPhrase { 
   display: flex;
   flex-direction: column;
@@ -415,3 +440,5 @@ body {
 .languageCode { 
   color: #B1695A;
   padding-right: 5px;
+}
+
