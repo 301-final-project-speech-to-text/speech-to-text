@@ -63,6 +63,12 @@ body {
   text-align: center;
   background-color: #E3BB88;
 }
+.team-desc{
+  height: auto;
+}
+.team-desc:target{
+  height: 0;
+}
 
 .team-section h1 {
   text-transform: uppercase;
