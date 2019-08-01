@@ -7,7 +7,7 @@
     <div id='translatedPhrase'>
       <p><span class='languageCode'> (<%= phrase.translated %>) </span> <%= phrase.translation %> </p>
     </div>
-    <button onclick='deleteTrans(`<%= phrase.id %>`)' class="delete" data-id= <%= phrase.id %> >X</button> 
+    <span onclick='deleteTrans(`<%= phrase.id %>`)' class="delete" data-id= <%= phrase.id %> ><span class = "delete">X</span></span> 
   </div>
   <% }) %>
 </section>
