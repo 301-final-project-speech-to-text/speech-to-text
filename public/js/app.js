@@ -156,7 +156,7 @@ recognition.onresult = function(event) {
     cache: false,
     success: function(data) {
       savedTranscript.translatedTranscript = data[0];
-      talk(data[0]);
+      talk(data[0], secondSelectedLanguageCode);
       $('i.firstTalk').css('animation','');
       $('.firstWords').text(transcript);
       $('.secondWords').text(data);
@@ -176,7 +176,7 @@ recognition2.onresult = function(event) {
     cache: false,
     success: function(data) {
       savedTranscript.translatedTranscript = data[0];
-      talk(data[0]);
+      talk(data[0], firstSelectedLanguageCode);
       $('i.secondTalk').css('animation','');
       $('.firstWords').text(data);
       $('.secondWords').text(transcript);
@@ -238,9 +238,10 @@ function clearPhrase() {
 }
 
 //
-function talk(transcript) {
+function talk(transcript, language) {
   const speech = new SpeechSynthesisUtterance();
-  speech.transcript = transcript;
+  speech.text = transcript;
+  speech.lang = language;
   speech.volume = 1;
   speech.rate = 1;
   speech.pitch = 1;
