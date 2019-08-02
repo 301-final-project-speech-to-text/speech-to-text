@@ -210,7 +210,7 @@ $('.save').click(() => {
   console.log(savedTranscript.originalTranscript);
   if (savedTranscript.originalTranscript !== '' || savedTranscript.translatedTranscript !== '') {
     $('#saveConfirmMessage').fadeIn(500);
-    $('#saveConfirmMessage').fadeOut(500);
+    $('#saveConfirmMessage').fadeOut(5000);
     $.ajax({
       method: 'POST',
       url: '/transcript',

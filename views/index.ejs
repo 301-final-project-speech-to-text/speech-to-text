@@ -8,9 +8,9 @@
   <%- include('header.ejs') %>
 
   <section id="user-login">
-    <%- include('header.ejs') %>
+    <%- include('headerLogin.ejs') %>
     <h1>
-      Welcome to <span class="appName">Goya!</span> Your personal translation app.
+      Welcome to <span id="appName">Goya!</span> Your personal translation app.
     </h1>
     
     <form id="userLogin">
@@ -29,9 +29,9 @@
 
   <section id="user-signup">
 
-    <%- include('header.ejs') %>
+    <%- include('headerLogin.ejs') %>
     <h1>
-    Welcome to <span class="appName">Goya!</span> Your personal translation app.
+    Welcome to <span id="appName">Goya!</span> Your personal translation app.
     </h1>
     
     <form id="userSignup">
@@ -65,7 +65,7 @@
 
   <section id="saveWindow">
       <div>
-        <p id="saveConfirmMessage">Saved</p>
+        <div id="saveConfirmMessage">Saved</div>
         <button class="save">Save Phrase</button>
       </div>
       <button id='clear'>Clear</button>
