@@ -367,7 +367,7 @@ h1 {
 #phrase { 
   display: flex;
   justify-content: space-between;
-  margin: 15px 0px;
+  margin: 15px;
 }
 
 #originalPhrase { 
