@@ -29,7 +29,6 @@ async function validateUserSignUp(event) {
     method: 'GET',
     url: '/users',
     success: function(data) { 
-      console.log(data);
       if (!data.includes(usernameInput)) {
         validate = true;
       }
@@ -57,7 +56,6 @@ async function validateUserLogin(event) {
     method: 'GET',
     url: '/users',
     success: function(data) { 
-      console.log(data);
       if (data.includes(usernameInput)) {
         validate = true;
       }
@@ -207,7 +205,6 @@ $('.secondTalk').click(() => {
 //
 $('.save').click(() => {
   const currentUser = localStorage.getItem('username');
-  console.log(savedTranscript.originalTranscript);
   if (savedTranscript.originalTranscript !== '' || savedTranscript.translatedTranscript !== '') {
     $('#saveConfirmMessage').fadeIn(500);
     $('#saveConfirmMessage').fadeOut(5000);
@@ -223,7 +220,6 @@ $('.save').click(() => {
         username: currentUser
       },
       success: function(data) {
-        console.log('save to SQL successful');
       }
     });
   } 
@@ -290,7 +286,6 @@ window.onclick = function(event) {
 }
 
 async function loadHTMLSavePage() { 
-  console.log(window.location.pathname.slice(-5));
   if (window.location.pathname.slice(-5) === 'saved') {
     const username = localStorage.getItem('username');
     let validate = false;
