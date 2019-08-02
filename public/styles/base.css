@@ -377,7 +377,9 @@ h1 {
   justify-content: space-between;
   margin: 15px;
 }
-
+#phrase:hover{
+  font-size: 1.5em;
+}
 #originalPhrase { 
   display: flex;
   flex-direction: column;
@@ -392,7 +394,12 @@ h1 {
 }
 
 .delete { 
-  flex-grow: 0.5;
+  font-size: 1em;
+}
+.delete:hover { 
+  color: red;
+  cursor: pointer;
+  font-size: 1.5em;
 }
 
 .languageCode { 
