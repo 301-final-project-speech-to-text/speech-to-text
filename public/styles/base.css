@@ -218,12 +218,6 @@ footer {
   flex-direction: column;
 }
 
-.firstWords, .secondWords { 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .windowHeader { 
   display: flex;
   justify-content: space-between;
@@ -252,13 +246,18 @@ body {
 }
 
 .firstWords, .secondWords { 
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #eee;
-  height: 80%;
+  height: 70%;
   width: 90%;
   margin-top: 20px;
   margin: auto;
   border-radius: 10px;
   box-shadow: 0 7px 4px #644749;
+  font-size: 1.5rem;
 }
 
 

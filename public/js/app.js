@@ -29,7 +29,6 @@ async function validateUserSignUp(event) {
     method: 'GET',
     url: '/users',
     success: function(data) { 
-      console.log(data);
       if (!data.includes(usernameInput)) {
         validate = true;
       }
@@ -57,7 +56,6 @@ async function validateUserLogin(event) {
     method: 'GET',
     url: '/users',
     success: function(data) { 
-      console.log(data);
       if (data.includes(usernameInput)) {
         validate = true;
       }
@@ -156,7 +154,7 @@ recognition.onresult = function(event) {
     cache: false,
     success: function(data) {
       savedTranscript.translatedTranscript = data[0];
-      talk(data[0]);
+      talk(data[0], secondSelectedLanguageCode);
       $('i.firstTalk').css('animation','');
       $('.firstWords').text(transcript);
       $('.secondWords').text(data);
@@ -176,7 +174,7 @@ recognition2.onresult = function(event) {
     cache: false,
     success: function(data) {
       savedTranscript.translatedTranscript = data[0];
-      talk(data[0]);
+      talk(data[0], firstSelectedLanguageCode);
       $('i.secondTalk').css('animation','');
       $('.firstWords').text(data);
       $('.secondWords').text(transcript);
@@ -207,7 +205,6 @@ $('.secondTalk').click(() => {
 //
 $('.save').click(() => {
   const currentUser = localStorage.getItem('username');
-  console.log(savedTranscript.originalTranscript);
   if (savedTranscript.originalTranscript !== '' || savedTranscript.translatedTranscript !== '') {
     $('#saveConfirmMessage').fadeIn(500);
     $('#saveConfirmMessage').fadeOut(5000);
@@ -223,7 +220,6 @@ $('.save').click(() => {
         username: currentUser
       },
       success: function(data) {
-        console.log('save to SQL successful');
       }
     });
   } 
@@ -238,9 +234,10 @@ function clearPhrase() {
 }
 
 //
-function talk(transcript) {
+function talk(transcript, language) {
   const speech = new SpeechSynthesisUtterance();
-  speech.transcript = transcript;
+  speech.text = transcript;
+  speech.lang = language;
   speech.volume = 1;
   speech.rate = 1;
   speech.pitch = 1;
@@ -289,7 +286,6 @@ window.onclick = function(event) {
 }
 
 async function loadHTMLSavePage() { 
-  console.log(window.location.pathname.slice(-5));
   if (window.location.pathname.slice(-5) === 'saved') {
     const username = localStorage.getItem('username');
     let validate = false;

@@ -1,13 +1,13 @@
 <section id="savedPhrasesTable">
-  <% savedPhrases.forEach(phrase => { %>
+  <% for (let i = savedPhrases.length-1; i >= 0; i--) { %>
   <div id="phrase">
     <div id='originalPhrase'>
-      <p><span class='languageCode'> (<%= phrase.original %>) </span> <%= phrase.string %> </p>
+      <p><span class='languageCode'> (<%= savedPhrases[i].original %>) </span> <%= savedPhrases[i].string %> </p>
     </div>
     <div id='translatedPhrase'>
-      <p><span class='languageCode'> (<%= phrase.translated %>) </span> <%= phrase.translation %> </p>
+      <p><span class='languageCode'> (<%= savedPhrases[i].translated %>) </span> <%= savedPhrases[i].translation %> </p>
     </div>
-    <span onclick='deleteTrans(`<%= phrase.id %>`)' class="delete" data-id= <%= phrase.id %> >	&#10008;</span> 
+    <span onclick='deleteTrans(`<%= savedPhrases[i].id %>`)' class="delete" data-id= <%= savedPhrases[i].id %> &#10008;</span> 
   </div>
-  <% }) %>
+  <% } %>
 </section>
