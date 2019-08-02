@@ -72,7 +72,11 @@ button:focus {
   text-align: center;
   background-color: #E3BB88;
 }
-
+.content{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 15;
+}
 .team-section h1 {
   text-transform: uppercase;
   color: black;
@@ -128,7 +132,7 @@ div > p {
 }
 
 .orangeSection {
-  height: 320px;
+  flex-grow: inherit;
   background: #DB9864;
 }
 
